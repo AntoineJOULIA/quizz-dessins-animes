@@ -1,0 +1,9 @@
+[
+  {
+    "id": "1",
+    "title": "Dragon Ball",
+    "hardHint": "assets/images/dragon-ball-01.png",
+    "easyHint": "assets/images/dragon-ball-02.jpg",
+    "acceptedAnswers": ["dragon ball", "dragonball", "db"]
+  }
+]
