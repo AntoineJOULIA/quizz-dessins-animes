@@ -7,9 +7,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="fr">
       <body
-        className=""
+        className="min-h-screen grid place-content-center bg-gray-100 text-gray-900"
       >
         {children}
       </body>
