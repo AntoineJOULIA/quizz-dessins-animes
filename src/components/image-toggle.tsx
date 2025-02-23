@@ -3,8 +3,10 @@
 import Image from "next/image";
 import { useState } from "react";
 
-const hardHint = "assets/images/dragon-ball-01.png";
-const easyHint = "assets/images/dragon-ball-02.jpg";
+const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
+
+const hardHint = PREFIX + "assets/images/dragon-ball-01.png";
+const easyHint = PREFIX + "assets/images/dragon-ball-02.jpg";
 
 export function ImageToggle() {
   const [imageSrc, setImageSrc] = useState(easyHint);
