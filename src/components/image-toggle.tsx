@@ -11,7 +11,7 @@ export function ImageToggle() {
 
   return (
     <div className="grid gap-4 place-items-center">
-      <Image src={imageSrc} width={300} height={300} alt="hint image" />
+      <Image src={imageSrc} width={300} height={300} alt="hint image" unoptimized />
       <div className="flex gap-4">
         <button className="p-4 border border-gray-200" onClick={() => setImageSrc(hardHint)}>
           Indice difficile
