@@ -7,7 +7,6 @@ import { useState } from "react";
 const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
 
 export function ImageToggle({ anime }: { anime: Anime }) {
-  console.log(anime);
   const [imageSrc, setImageSrc] = useState(PREFIX + anime.hardHint);
 
   return (
