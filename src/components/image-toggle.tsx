@@ -3,7 +3,7 @@
 import { Anime } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
-import { Button } from "./ui/button";
+import { Button } from "@/components/ui/button";
 
 const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
 

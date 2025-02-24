@@ -14,7 +14,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ id: stri
   return (
     <div className="">
       <ImageToggle anime={anime} />
-      <AnswerForm />
+      <AnswerForm anime={anime} />
     </div>
   );
 }
