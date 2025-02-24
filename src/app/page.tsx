@@ -7,6 +7,7 @@ export default function Home() {
 
   return (
     <div className="outline outline-sky-400">
+      <h1 className="text-5xl font-bold">Quizz sur les dessins animés de notre enfance</h1>
       <ImageToggle anime={animes[0]} />
     </div>
   );
