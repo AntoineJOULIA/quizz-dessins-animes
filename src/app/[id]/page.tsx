@@ -1,3 +1,4 @@
+import AnswerForm from "@/components/answer-form";
 import { ImageToggle } from "@/components/image-toggle";
 import { getAnime } from "@/lib/db";
 import { notFound } from "next/navigation";
@@ -13,6 +14,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ id: stri
   return (
     <div className="">
       <ImageToggle anime={anime} />
+      <AnswerForm />
     </div>
   );
 }
