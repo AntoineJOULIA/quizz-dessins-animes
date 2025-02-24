@@ -1,5 +1,5 @@
+import { Navbar } from "@/components/navbar";
 import "./globals.css";
-
 
 export default function RootLayout({
   children,
@@ -8,9 +8,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body
-        className="min-h-screen grid place-content-center bg-gray-100 text-gray-900"
-      >
+      <body className="min-h-screen flex flex-col justify-start container mx-auto">
+        <Navbar />
         {children}
       </body>
     </html>

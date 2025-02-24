@@ -14,10 +14,10 @@ export function ImageToggle({ anime }: { anime: Anime }) {
     <div className="grid gap-4 place-items-center">
       <Image src={imageSrc} width={800} height={600} alt="hint image" />
       <div className="flex gap-4">
-        <Button className="p-4 border border-gray-200" onClick={() => setImageSrc(PREFIX + anime.hardHint)}>
+        <Button variant={"secondary"} onClick={() => setImageSrc(PREFIX + anime.hardHint)}>
           Indice difficile
         </Button>
-        <Button className="p-4 border border-gray-200" onClick={() => setImageSrc(PREFIX + anime.easyHint)}>
+        <Button variant={"secondary"} onClick={() => setImageSrc(PREFIX + anime.easyHint)}>
           Indice facile
         </Button>
       </div>

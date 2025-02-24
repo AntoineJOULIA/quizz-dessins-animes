@@ -1,14 +1,13 @@
-import { ImageToggle } from "@/components/image-toggle";
-import { Anime } from "@/types";
-import data from "../data/dessins-animes.json";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 export default function Home() {
-  const animes = data as Anime[];
-
   return (
     <div className="outline outline-sky-400">
       <h1 className="text-5xl font-bold">Quizz sur les dessins animés de notre enfance</h1>
-      <ImageToggle anime={animes[0]} />
+      <Button asChild className="p-4 border border-gray-200">
+        <Link href="/1">Commencer</Link>
+      </Button>
     </div>
   );
 }
