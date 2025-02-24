@@ -1,7 +1,16 @@
 import AnswerForm from "@/components/answer-form";
 import { ImageToggle } from "@/components/image-toggle";
-import { getAnime } from "@/lib/db";
+import { getAnime, getAnimes } from "@/lib/db";
 import { notFound } from "next/navigation";
+
+// Return a list of `params` to populate the [id] dynamic segment
+export async function generateStaticParams() {
+  const animes = getAnimes();
+
+  return animes.map((anime) => ({
+    id: anime.id,
+  }));
+}
 
 export default async function QuizzPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
