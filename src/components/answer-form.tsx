@@ -8,7 +8,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
 import { checkAnswer } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const formSchema = z.object({
   answer: z.string().min(1),
@@ -17,6 +17,14 @@ const formSchema = z.object({
 export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [message, setMessage] = useState("");
+  const [foundAnimeIds, setFoundAnimeIds] = useState<string[]>([]);
+
+  useEffect(() => {
+    const storedAnimeIds = window.localStorage.getItem("quizz-anime");
+    if (storedAnimeIds) {
+      setFoundAnimeIds(storedAnimeIds.split(","));
+    }
+  }, []);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -28,6 +36,12 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
     if (success) {
       setIsSuccess(true);
       setMessage("Bonne réponse !");
+
+      if (foundAnimeIds.includes(anime.id)) return;
+
+      const foundIds = [...foundAnimeIds, anime.id];
+      setFoundAnimeIds(foundIds);
+      window.localStorage.setItem("quizz-anime", foundIds.join(","));
     } else {
       setIsSuccess(false);
       setMessage("Mauvaise réponse !");
