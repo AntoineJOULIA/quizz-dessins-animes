@@ -48,6 +48,8 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
     }
   }
 
+  const isFound = foundAnimeIds.includes(anime.id) || isSuccess;
+
   return (
     <div className="grid gap-4">
       <Form {...form}>
@@ -75,7 +77,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       </Form>
 
       {message && <p className="text-2xl font-bold">{message}</p>}
-      {isSuccess && <p className="text-2xl font-bold">{anime.title}</p>}
+      {isFound && <p className="text-2xl font-bold">{anime.title}</p>}
     </div>
   );
 }
