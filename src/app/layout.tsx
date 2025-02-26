@@ -1,4 +1,4 @@
-import { Navbar } from "@/components/navbar";
+import { Header } from "@/components/header";
 import "./globals.css";
 
 export default function RootLayout({
@@ -8,8 +8,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen flex flex-col justify-start container mx-auto">
-        <Navbar />
+      <body className="min-h-screen flex flex-col">
+        <Header />
         {children}
       </body>
     </html>
