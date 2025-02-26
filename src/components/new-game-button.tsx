@@ -11,5 +11,9 @@ export function NewGameButton() {
     router.push("/1");
   }
 
-  return <Button onClick={handleClick}>Nouvelle partie</Button>;
+  return (
+    <Button size={"lg"} className="text-2xl font-bold px-12 py-8" onClick={handleClick}>
+      Nouvelle partie
+    </Button>
+  );
 }
