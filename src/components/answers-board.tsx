@@ -1,7 +1,7 @@
 "use client";
 
-import { Status, useAnimeStatus } from "@/hooks/useAnimeStatus";
-import { Anime } from "@/types";
+import { useAnimeStatus } from "@/hooks/useAnimeStatus";
+import { Anime, Status } from "@/types";
 import { CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";

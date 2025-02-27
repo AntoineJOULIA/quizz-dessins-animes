@@ -14,3 +14,7 @@ export function checkAnswer(anime: Anime, answer: string) {
   });
   return success;
 }
+
+export function youtubeUrlToEmbed(youtubeUrl: string) {
+  return youtubeUrl.replace("/watch?v=", "/embed/");
+}

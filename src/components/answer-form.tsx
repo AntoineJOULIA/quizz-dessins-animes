@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
-import { checkAnswer } from "@/lib/utils";
+import { checkAnswer, youtubeUrlToEmbed } from "@/lib/utils";
 import { useState } from "react";
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Frown, Trophy } from "lucide-react";
@@ -51,6 +51,18 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
           <p className="text-5xl font-bold">Bravo !</p>
         </div>
         <p className="text-7xl font-black">{anime.title}</p>
+        {anime.youtubeUrl && (
+          <div className="">
+            <iframe
+              src={youtubeUrlToEmbed(anime.youtubeUrl)}
+              width="560"
+              height="315"
+              title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        )}
       </div>
     );
   }

@@ -1,6 +1,5 @@
+import { Status } from "@/types";
 import { useEffect, useState } from "react";
-
-export type Status = "new" | "correct" | "wrong";
 
 export function useAnimeStatus() {
   const [animeStatus, setAnimeStatus] = useState<{ [key: string]: Status }>({});
