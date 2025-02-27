@@ -30,7 +30,7 @@ export default function Home() {
       <div className="flex gap-8">
         <NewGameButton />
         <Button asChild variant={"outline"} size={"lg"} className="text-2xl font-bold px-12 py-8">
-          <Link href="/1">Commencer</Link>
+          <Link href="/1">Continuer</Link>
         </Button>
       </div>
     </div>
