@@ -10,6 +10,7 @@ import { Anime } from "@/types";
 import { checkAnswer } from "@/lib/utils";
 import { useState } from "react";
 import { useAnswers } from "@/hooks/useAnswers";
+import { Frown, Trophy } from "lucide-react";
 
 const formSchema = z.object({
   answer: z.string().min(1),
@@ -17,7 +18,7 @@ const formSchema = z.object({
 
 export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
-  const [message, setMessage] = useState("");
+  const [submitted, setSubmitted] = useState(false);
   const { correctAnswers, addAnswer } = useAnswers();
 
   const form = useForm<z.infer<typeof formSchema>>({
@@ -26,50 +27,70 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
+    setSubmitted(true);
     const success = checkAnswer(anime, values.answer);
     if (success) {
       setIsSuccess(true);
-      setMessage("Bonne réponse !");
 
       if (correctAnswers.includes(anime.id)) return;
 
       addAnswer(anime.id);
     } else {
       setIsSuccess(false);
-      setMessage("Mauvaise réponse !");
     }
   }
 
   const isFound = correctAnswers.includes(anime.id) || isSuccess;
 
+  if (isFound) {
+    return (
+      <div className="flex flex-col gap-12">
+        <div className="flex gap-4">
+          <Trophy className="size-12 text-yellow-500" />
+          <p className="text-5xl font-bold">Bravo !</p>
+        </div>
+        <p className="text-7xl font-black">{anime.title}</p>
+      </div>
+    );
+  }
+
   return (
-    <div className="grid gap-4">
+    <div className="flex flex-col gap-24">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 max-w-3xl mx-auto py-10">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-8">
           <FormField
             control={form.control}
             name="answer"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Réponse</FormLabel>
+                <FormLabel className="text-2xl font-bold">Réponse</FormLabel>
                 <FormControl>
                   <Input
+                    className="text-2xl md:text-2xl p-8"
                     placeholder="Ma réponse"
                     type="string"
                     {...field}
                     onChange={(event) => field.onChange(event.target.value)}
+                    onFocus={() => setSubmitted(false)}
                   />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit">Soumettre</Button>
+          <Button className="text-2xl font-bold px-12 py-8" type="submit">
+            Vérifier
+          </Button>
         </form>
       </Form>
 
-      {message && <p className="text-2xl font-bold">{message}</p>}
-      {isFound && <p className="text-2xl font-bold">{anime.title}</p>}
+      {submitted && (
+        <div className="grid grid-cols-[min-content_1fr] gap-4 content-start">
+          <Frown className="size-10 text-red-500" />
+          <p className="text-4xl font-bold">Mauvaise réponse !</p>
+          <p className="text-2xl col-start-2">Essaye encore !</p>
+        </div>
+      )}
     </div>
   );
 }

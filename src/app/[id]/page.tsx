@@ -26,7 +26,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ id: stri
   const nextId = parseInt(id) + 1;
 
   return (
-    <div className="grid grid-rows-[auto_1fr] grid-cols-[1rem_90px_3fr_2fr_90px_1rem] gap-8">
+    <div className="grid grid-rows-[auto_1fr] grid-cols-[1rem_90px_3fr_2fr_90px_1rem] gap-x-20 gap-y-8">
       <div className="row-span-2"></div>
       <p className="col-start-3 col-span-3 text-6xl font-black">{anime.id.padStart(3, "0")}</p>
       <div className="row-span-2"></div>
