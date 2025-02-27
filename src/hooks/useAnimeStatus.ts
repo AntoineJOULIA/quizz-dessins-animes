@@ -1,0 +1,21 @@
+import { useEffect, useState } from "react";
+
+export type Status = "new" | "correct" | "wrong";
+
+export function useAnimeStatus() {
+  const [animeStatus, setAnimeStatus] = useState<{ [key: string]: Status }>({});
+
+  useEffect(() => {
+    const storedStatus = window.localStorage.getItem("quizz-status");
+    if (storedStatus) {
+      setAnimeStatus(JSON.parse(storedStatus));
+    }
+  }, []);
+
+  function updateStatus(animeId: string, status: Status) {
+    const results = { ...animeStatus, [animeId]: status };
+    setAnimeStatus(results);
+    window.localStorage.setItem("quizz-status", JSON.stringify(results));
+  }
+  return [animeStatus, updateStatus] as const;
+}

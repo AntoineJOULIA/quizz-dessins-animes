@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
 import { checkAnswer } from "@/lib/utils";
 import { useState } from "react";
-import { useAnswers } from "@/hooks/useAnswers";
+import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Frown, Trophy } from "lucide-react";
 
 const formSchema = z.object({
@@ -19,7 +19,7 @@ const formSchema = z.object({
 export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const { correctAnswers, addAnswer } = useAnswers();
+  const [animeStatus, updateStatus] = useAnimeStatus();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -32,15 +32,16 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
     if (success) {
       setIsSuccess(true);
 
-      if (correctAnswers.includes(anime.id)) return;
+      if (animeStatus[anime.id] === "correct") return;
 
-      addAnswer(anime.id);
+      updateStatus(anime.id, "correct");
     } else {
       setIsSuccess(false);
+      updateStatus(anime.id, "wrong");
     }
   }
 
-  const isFound = correctAnswers.includes(anime.id) || isSuccess;
+  const isFound = animeStatus[anime.id] === "correct" || isSuccess;
 
   if (isFound) {
     return (

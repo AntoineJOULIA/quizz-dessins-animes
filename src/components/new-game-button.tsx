@@ -7,7 +7,7 @@ export function NewGameButton() {
   const router = useRouter();
 
   function handleClick() {
-    window.localStorage.removeItem("quizz-anime");
+    window.localStorage.removeItem("quizz-status");
     router.push("/1");
   }
 
