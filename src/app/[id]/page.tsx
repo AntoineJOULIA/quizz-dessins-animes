@@ -1,7 +1,7 @@
 import AnswerForm from "@/components/answer-form";
 import { ImageToggle } from "@/components/image-toggle";
-import { Button } from "@/components/ui/button";
 import { getAnime, getAnimes } from "@/lib/db";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -22,18 +22,38 @@ export default async function QuizzPage({ params }: { params: Promise<{ id: stri
     notFound();
   }
 
+  const prevId = parseInt(id) - 1;
+  const nextId = parseInt(id) + 1;
+
   return (
-    <div className="">
+    <div className="grid grid-rows-[auto_1fr] grid-cols-[1rem_90px_3fr_2fr_90px_1rem] gap-8">
+      <div className="row-span-2"></div>
+      <p className="col-start-3 col-span-3 text-6xl font-black">{anime.id.padStart(3, "0")}</p>
+      <div className="row-span-2"></div>
+      {prevId > 0 ? (
+        <Link
+          href={`/${prevId}`}
+          className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
+        >
+          <ChevronLeft className="h-4 w-4 mr-2" />
+          {prevId.toString().padStart(3, "0")}
+        </Link>
+      ) : (
+        <div></div>
+      )}
       <ImageToggle anime={anime} />
       <AnswerForm anime={anime} />
-      <div className="flex justify-between">
-        <Button variant={"secondary"} asChild disabled={parseInt(id) < 2}>
-          <Link href={`/${parseInt(id) - 1}`}>Précédent</Link>
-        </Button>
-        <Button variant={"secondary"} asChild disabled={parseInt(id) >= getAnimes().length}>
-          <Link href={`/${parseInt(id) + 1}`}>Suivant</Link>
-        </Button>
-      </div>
+      {nextId <= getAnimes().length ? (
+        <Link
+          href={`/${nextId}`}
+          className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
+        >
+          {nextId.toString().padStart(3, "0")}
+          <ChevronRight className="h-4 w-4 ml-2" />
+        </Link>
+      ) : (
+        <div></div>
+      )}
     </div>
   );
 }
