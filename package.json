@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:populate": "cd src/scripts && node populate.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^4.1.2",
