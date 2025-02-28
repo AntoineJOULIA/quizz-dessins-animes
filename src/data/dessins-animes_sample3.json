@@ -1,0 +1,26 @@
+[{
+        "title": "Johan et Pirlouit",
+        "id": "pirlouit",
+        "acceptedAnswers": ["johan et pirlouit", "joan et pirlouit", "johan et pirloui", "joan et pirloui"],
+        "youtubeUrl": "",
+        "hardHint": "assets/images/pirlouit-01.jpg",
+        "easyHint": "assets/images/pirlouit-02.jpg",
+        "index": "5"
+    }, {
+        "title": "Transformers",
+        "id": "transformers",
+        "acceptedAnswers": ["transformers", "transformer"],
+        "youtubeUrl": "",
+        "hardHint": "assets/images/transformers-01.jpg",
+        "easyHint": "assets/images/transformers-02.jpg",
+        "index": "36"
+    }, {
+        "title": "Pollyanna",
+        "id": "pollyanna",
+        "acceptedAnswers": ["pollyanna", "pollyana", "polyanna", "polyana", "pollianna", "polianna", "polliana", "poliana"],
+        "youtubeUrl": "",
+        "hardHint": "assets/images/pollyanna-01.jpg",
+        "easyHint": "assets/images/pollyanna-02.jpg",
+        "index": "58"
+    }
+]

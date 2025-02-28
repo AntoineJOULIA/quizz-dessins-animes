@@ -37,7 +37,19 @@ const animes = shuffledAnimes.map((item, index) => {
   };
 });
 
-fs.writeFileSync("../data/dessins-animes.json", JSON.stringify(animes), "utf8");
-// const sample = animes.slice(0, 10);
-// fs.writeFileSync("../data/dessins-animes_sample10.json", JSON.stringify(sample), "utf8");
+// Transforms acceptedAnswers string in string[]
+const finalAnimes = animes.map((anime) => {
+  if (!anime.acceptedAnswers) return { ...anime, acceptedAnswers: [] };
+
+  let answers = anime.acceptedAnswers.split(",");
+  answers = answers.map((val) => val.trim());
+  return {
+    ...anime,
+    acceptedAnswers: answers,
+  };
+});
+
+// fs.writeFileSync("../data/dessins-animes.json", JSON.stringify(finalAnimes), "utf8");
+const sample = finalAnimes.filter((anime) => anime.acceptedAnswers.length > 1).slice(0, 3);
+fs.writeFileSync("../data/dessins-animes_sample3.json", JSON.stringify(sample), "utf8");
 console.log("Conversion done");
