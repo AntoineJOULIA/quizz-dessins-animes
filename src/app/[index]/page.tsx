@@ -10,25 +10,25 @@ export async function generateStaticParams() {
   const animes = getAnimes();
 
   return animes.map((anime) => ({
-    id: anime.id,
+    index: anime.index,
   }));
 }
 
-export default async function QuizzPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = await params;
+export default async function QuizzPage({ params }: { params: Promise<{ index: string }> }) {
+  const { index } = await params;
 
-  const anime = getAnime(id);
+  const anime = getAnime(index);
   if (!anime) {
     notFound();
   }
 
-  const prevId = parseInt(id) - 1;
-  const nextId = parseInt(id) + 1;
+  const prevId = parseInt(index) - 1;
+  const nextId = parseInt(index) + 1;
 
   return (
     <div className="grid grid-rows-[auto_1fr] grid-cols-[1rem_90px_3fr_2fr_90px_1rem] gap-x-20 gap-y-8">
       <div className="row-span-2"></div>
-      <p className="col-start-3 col-span-3 text-6xl font-black">{anime.id.padStart(3, "0")}</p>
+      <p className="col-start-3 col-span-3 text-6xl font-black">{anime.index.toString().padStart(3, "0")}</p>
       <div className="row-span-2"></div>
       {prevId > 0 ? (
         <Link

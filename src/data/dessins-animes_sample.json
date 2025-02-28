@@ -1,0 +1,29 @@
+[
+  {
+    "id": "1",
+    "title": "Dragon Ball",
+    "hardHint": "assets/images/dragon-ball-01.png",
+    "easyHint": "assets/images/dragon-ball-02.jpg",
+    "acceptedAnswers": ["dragon ball", "dragonball", "db"],
+    "youtubeUrl": "https://www.youtube.com/watch?v=XW6A18equSk"
+  },
+  {
+    "id": "2",
+    "title": "Les chevaliers du zodiaque",
+    "hardHint": "assets/images/cdz-01.png",
+    "easyHint": "assets/images/cdz-02.jpg",
+    "acceptedAnswers": [
+      "les chevaliers du zodiaque",
+      "chevaliers du zodiaque",
+      "les chevaliers du zodiac",
+      "chevaliers du zodiac",
+      "les chevalier du zodiaque",
+      "chevalier du zodiaque",
+      "les chevalier du zodiac",
+      "chevalier du zodiac",
+      "saint seiya",
+      "saint seya"
+    ],
+    "youtubeUrl": "https://www.youtube.com/watch?v=3yE19LKcc-I"
+  }
+]

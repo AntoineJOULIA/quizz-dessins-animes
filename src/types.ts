@@ -1,5 +1,6 @@
 export type Anime = {
   id: string;
+  index: string;
   title: string;
   hardHint: string;
   easyHint: string;
