@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
+import { Tv } from "lucide-react";
 
 export function NewGameButton() {
   const router = useRouter();
@@ -12,7 +13,8 @@ export function NewGameButton() {
   }
 
   return (
-    <Button size={"lg"} className="text-2xl font-bold px-12 py-8" onClick={handleClick}>
+    <Button className="text-2xl font-bold px-12 py-8" onClick={handleClick}>
+      <Tv className="h-8 w-8 mr-4" />
       Nouvelle partie
     </Button>
   );

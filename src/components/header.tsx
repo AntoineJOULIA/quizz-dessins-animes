@@ -7,7 +7,7 @@ export function Header() {
         <ul className="flex gap-8 justify-center items-center">
           <li>
             <Link className="text-3xl p-4" href="/">
-              Quizz
+              Accueil
             </Link>
           </li>
           <li>
