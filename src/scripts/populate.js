@@ -29,16 +29,8 @@ const animesWithHints = result.data.map((anime) => {
 // Shuffle array
 const shuffledAnimes = shuffle(animesWithHints);
 
-// Add index property
-const animes = shuffledAnimes.map((item, index) => {
-  return {
-    ...item,
-    index: (index + 1).toString(),
-  };
-});
-
 // Transforms acceptedAnswers string in string[]
-const finalAnimes = animes.map((anime) => {
+const animesWithConvertedAcceptedAnswers = shuffledAnimes.map((anime) => {
   if (!anime.acceptedAnswers) return { ...anime, acceptedAnswers: [] };
 
   let answers = anime.acceptedAnswers.split(",");
@@ -50,6 +42,20 @@ const finalAnimes = animes.map((anime) => {
 });
 
 // fs.writeFileSync("../data/dessins-animes.json", JSON.stringify(finalAnimes), "utf8");
-const sample = finalAnimes.filter((anime) => anime.acceptedAnswers.length > 1).slice(0, 3);
-fs.writeFileSync("../data/dessins-animes_sample3.json", JSON.stringify(sample), "utf8");
+// const sample = finalAnimes.filter((anime) => anime.acceptedAnswers.length > 1).slice(0, 3);
+const sample = animesWithConvertedAcceptedAnswers.filter((anime) => hasImage(anime.id));
+
+// Add index property
+const animes = sample.map((item, index) => {
+  return {
+    ...item,
+    index: (index + 1).toString(),
+  };
+});
+fs.writeFileSync("../data/dessins-animes_sample.json", JSON.stringify(animes), "utf8");
 console.log("Conversion done");
+
+function hasImage(id) {
+  const imagePath = `../../public/assets/images/${id}-01.jpg`;
+  return fs.existsSync(imagePath);
+}
