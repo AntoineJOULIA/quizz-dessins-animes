@@ -21,8 +21,8 @@ let result = Papa.parse(data, {
 const animesWithHints = result.data.map((anime) => {
   return {
     ...anime,
-    hardHint: `assets/images/${anime.id}-01.jpg`,
-    easyHint: `assets/images/${anime.id}-02.jpg`,
+    hardHint: `assets/images/${anime.id}-hard.jpg`,
+    easyHint: `assets/images/${anime.id}-easy.jpg`,
   };
 });
 
@@ -41,8 +41,6 @@ const animesWithConvertedAcceptedAnswers = shuffledAnimes.map((anime) => {
   };
 });
 
-// fs.writeFileSync("../data/dessins-animes.json", JSON.stringify(finalAnimes), "utf8");
-// const sample = finalAnimes.filter((anime) => anime.acceptedAnswers.length > 1).slice(0, 3);
 const sample = animesWithConvertedAcceptedAnswers.filter((anime) => hasImage(anime.id));
 
 // Add index property
@@ -54,8 +52,9 @@ const animes = sample.map((item, index) => {
 });
 fs.writeFileSync("../data/dessins-animes_sample.json", JSON.stringify(animes), "utf8");
 console.log("Conversion done");
+console.log(`Dataset contains ${animes.length} animes (vs total of ${animesWithConvertedAcceptedAnswers.length})`);
 
 function hasImage(id) {
-  const imagePath = `../../public/assets/images/${id}-01.jpg`;
+  const imagePath = `../../public/assets/images/${id}-hard.jpg`;
   return fs.existsSync(imagePath);
 }
