@@ -7,9 +7,9 @@
         "easyHint": "assets/images/gijoe-02.jpg",
         "index": "1"
     }, {
-        "title": "Samoura� Pizza Cat's",
+        "title": "Samouraï Pizza Cat's",
         "id": "spc",
-        "acceptedAnswers": ["samoura� pizza cat's", "samourai pizza cat's", "samourais pizza cat's", "samoura� pizza cats", "samourai pizza cats", "samourais pizza cats"],
+        "acceptedAnswers": ["samouraï pizza cat's", "samourai pizza cat's", "samourais pizza cat's", "samoura� pizza cats", "samourai pizza cats", "samourais pizza cats"],
         "youtubeUrl": "",
         "hardHint": "assets/images/spc-01.jpg",
         "easyHint": "assets/images/spc-02.jpg",
