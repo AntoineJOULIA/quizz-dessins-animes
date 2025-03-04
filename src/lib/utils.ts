@@ -6,9 +6,22 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
+/**
+ *
+ * @param str : chaîne de caractères à normaliser, contenant des caractères accentués
+ * @returns chaines de caractères normalisée, sans accents, en minuscules et sans espaces inutiles
+ */
+function normalize(str: string) {
+  const normalized = str
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+  return normalized;
+}
 
 export function checkAnswer(anime: Anime, answer: string) {
-  const normalizedAnswer = answer.toLowerCase().trim();
+  const normalizedAnswer = normalize(answer);
   const success = anime.acceptedAnswers.some((acceptedAnswer) => {
     return acceptedAnswer.toLowerCase().trim() === normalizedAnswer;
   });

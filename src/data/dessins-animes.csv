@@ -1,17 +1,17 @@
 title;id;youtubeUrl;acceptedAnswers
-A pleins gaz;apg;;à pleins gaz, a pleins gaz, a plein gaz, à plein gaz
+A pleins gaz;apg;;a pleins gaz, a plein gaz
 Adrien, sauveur du monde;adrien;;adrien, adrien sauveur du monde, adrien sauve le monde
 Albator;albator;;albator,albator 78,albator 84
 Les Animaniacs;animaniacs;;animaniacs, animaniac, les animaniacs, les animaniac
 Attaquantes;attaquantes;;attaquantes
 Les aventures de Carlos;carlos;;les aventures de carlos, carlos,aventures de carlos
 Les aventures de Tintin;titin;;les aventures de tintin, titin,aventures de titin
-L'académie des ninjas;adn;;l'académie des ninjas, académie des ninjas, academie des ninjas, académie des ninja, academie des ninja,l'academie des ninjas, l'academie des ninja
+L'académie des ninjas;adn;;l'academie des ninjas, academie des ninjas,academie des ninja,l'academie des ninja
 Alvin et les chimpmunks;alvin;;alvin et les chimpmunks, alvin,chimpmunks, alvin et les chipmunks,alvin et les chipmuks
 Astro le petit robot;astro;;astro le petit robot, astro, astro le robot
 Les aventures de Robin des bois;robin;;les aventures de robin des bois, robin des bois
-La bande à  Ovide;ovide;;la bande à  ovide, ovide,bande à ovide, la bande a ovide, bande a ovide
-La bande à Piscou;piscou;;la bande à piscou, piscou,bande à piscou,la bande a picsou, bande a picsou
+La bande à  Ovide;ovide;;la bande a ovide, bande a ovide,ovide
+La bande à Piscou;piscou;;la bande a picsou, bande a picsou,picsou
 Batman;batman;;batman
 Beetlejuice;beetlejuice;;beetlejuice
 Bibifoc;bibifoc;;bibifoc, bibifoque
@@ -22,7 +22,7 @@ Bouli;bouli;;bouli
 Boumbo;boumbo;;boumbo
 Bravestarr;bravestarr;;bravestarr, bravestar, brave star, brave starr
 Babar;babar;;babar
-La bande à  Dingo;dingo;;la bande à  dingo, dingo,bande à dingo,la bande a dingo, bande a dingo
+La bande à  Dingo;dingo;;la bande a dingo, bande a dingo,dingo
 Les Barbapapa;barbapapa;;les barbapapa,barbapapa,les barbapapas, barbapapas
 Bleu, l'enfant de la Terre;bleu;;bleu l'enfant de la terre, bleu,l'enfant de la terre,enfant de la terre
 Bucky O'Hare;bucky;;bucky o'hare, buky o'hare,bucky ohare, buky ohare, bucky
@@ -31,18 +31,18 @@ But pour Rudy;rudy;;but pour rudy,rudy
 Candy;candy;;candy
 Capitaine Caverne;caverne;;capitaine caverne,capitaine cavern,captaine caverne,captaine cavern
 Capitaine Flam;flam;;capitaine flam,capitaine flamme
-Les Chevaliers du zodiaque;cdz;;"les chevaliers du zodiaque, chevaliers du zodiaque, les chevaliers du zodiac, chevaliers du zodiac, les chevalier du zodiaque, chevalier du zodiaque, les chevalier du zodiac, chevalier du zodiac; saint seiya, saint seya"
-Club Bécébégé;bcbg;;club bécébégé,bécébégé,club bcbg,bcbg
+Les chevaliers du zodiaque;cdz;;"les chevaliers du zodiaque, chevaliers du zodiaque, les chevaliers du zodiac, chevaliers du zodiac, les chevalier du zodiaque, chevalier du zodiaque, les chevalier du zodiac, chevalier du zodiac; saint seiya, saint seya"
+Club Bécébégé;bcbg;;club becebege,becebege,club bcbg,bcbg
 Cobra;cobra;;cobra
 Les Cosmocats;cosmocats;;les cosmocats, cosmocats, cosmocat, les cosmocat
 Creamy, merveilleuse Creamy;creamy;;creamy, merveilleuse creamy
 Cynthia ou le rythme de la vie;cynthia;;cynthia ou le rythme de la vie, cynthia, cyntia ou le rythme de la vie, cyntia, cynthia ou le rytme de la vie, cyntia ou le rytme de la vie
-Captain Planet;planet;;captain planet,planet,capitaine planet,captain planète, capitaine planète
-Casper;casper;;casper, casper le petit fantôme, casper le petit fantome
-Cherry miel;cherry;;cherry miel,chérie miel, cherrymiel
-Clémentine;clementine;;clémentine, clementine
+Captain Planet;planet;;captain planet,planet,capitaine planet,captain planete, capitaine planete
+Casper;casper;;casper, casper le petit fantome
+Cherry miel;cherry;;cherry miel,cherie miel, cherrymiel
+Clémentine;clementine;;clementine
 Cubitus;cubitus;;cubitus
-Le collège fou fou fou;cfff;;le collège fou fou fou, collège fou fou fou, college fou fou fou,le college fou fou fou
+Le collège fou fou fou;cfff;;college fou fou fou,le college fou fou fou
 Conan l'aventurier;conan;;conan l'aventurier, conan
 Dare dare motus;ddm;;dare dare motus,dardarmotus,dardar motus
 Denis la malice;denis;;denis la malice
@@ -54,7 +54,7 @@ Dragon ball Z;dbz;;dragon ball z, dragonball z, dragonballz, db z, dbz
 Denver le dernier dinosaure;denver;;denver le dernier dinosaure, denver
 Dancougar;dancougar;;dancougar
 David le gnome;gnome;;david le gnome,gnome,david
-L'école des champions;edc;;l'école des champions, école des champions,l'ecole des champions,l'école des champion,l'ecole des champion
+L'école des champions;edc;;l'ecole des champions, ecole des champions,l'ecole des champion,ecole des champion
 Emi magique;emi;;emi magique,magique,emi,emy magique,emy,emmi magique,emmi,emmy magique,emmy
 Les Entrechats;entrechats;;entrechats, entrechat, les entrechats, les entrechat
 Flo et les robinsons suisses;flo;;flo et les robinsons suisses, flo,les robinsons suisses,robinsons suisses,robinson suisse,flo et les robinson suisses,flo et les robinson suisse
@@ -70,24 +70,24 @@ Goldorak;goldorak;;goldorak
 Les Gummi;gummi;;les gummi,gummi,les gummy,gummy,les gummies,gummies
 Ghostbusters;ghostbusters;;ghostbusters,ghosbusters
 Les Galaxy Rangers;galaxy;;les galaxy rangers,galaxy rangers,galaxy ranger,les galaxy ranger
-Il était une fois la vie;ieuflv;;il était une fois la vie,il était une fois la vie,la vie
-Il était une fois l'homme;ieuflh;;il était une fois l'homme, il etait une fois l'homme
+Il était une fois la vie;ieuflv;;il etait une fois la vie,la vie
+Il était une fois l'homme;ieuflh;;il etait une fois l'homme
 Inspecteur Gadget;gadget;;inspecteur gadget,gadget
-L'île au trésor;tresor;;l'île au trésor, île au trésor, l'ile au trésor,ile au trésor,l'île au tresor, île au trésor, l'ile au tresor, ile au tresor
+L'île au trésor;tresor;;l'ile au tresor, ile au tresor
 Jeanne et Serge;jeanne;;jeanne et serge
 Jem et les hologrammes;jem;;jem et les hologrammes, jem,gem
 Jeu, set et match;jsm;;jeu set et match
 Juliette je t'aime;juliette;;juliette je t'aime, juliette
 Les jumeaux du bout du monde;jumeaux;;les jumeaux du bout du monde, jumeaux du bout du monde,jumeau du bout du monde
-Jayce et les conquérants de la lumière;jayce;;jayce et les conquérants de la lumière, jayce, jaice et les conquérants de la lumière, jayce et les conquerants de la lumiere, jayce et les conquérant de la lumière
+Jayce et les conquérants de la lumière;jayce;;jayce et les conquerants de la lumiere, jayce, jaice et les conquerants de la lumiere,jayce et les conquerant de la lumière
 Johan et Pirlouit;pirlouit;;johan et pirlouit,joan et pirlouit,johan et pirloui,joan et pirloui
 Ken le survivant;ken;;ken le survivant, ken, hokuto no ken
 Lady Oscar;loscar;;lady oscar
 Lamu;lamu;;lamu
 Lucile amour et rock'n roll;lucile;;lucile amour et rock'n roll, lucile embrasse-moi, lucile embrasse moi, lucile amour et rock n roll, lucile amour et rocknroll, lucile
 Lucky Luke;lucky;;lucky luke, luky luke
-Laura ou la passion du théâtre;laura;;laura ou la passion du théâtre, laura et la passion du théâtre, laura ou la passion du theatre, laura et la passion du theatre
-La légende de Blanche Neige;blanche;;la légende de blanche neige,blanche neige, blanche-neige
+Laura ou la passion du théâtre;laura;;laura ou la passion du theatre, laura et la passion du theatre, laura
+La légende de Blanche Neige;blanche;;la legende de blanche neige,blanche neige, blanche-neige
 Mask;mask;;mask
 Max et compagnie;max;;max et compagnie
 Mighty mice from Mars;mice;;mighty mice from mars, mighty mice, motards de l'espace
@@ -95,29 +95,29 @@ Myster Mask;myster;;myster mask,mister mask, myster masque, mister masque
 Moi Renart;renart;;moi renart,renart, moi renard, renard
 Mon petit poney;poney;;mon petit poney,petit poney
 Muscleman;muscleman;;muscleman
-Les mystérieuses cités d'or;mco;;les mystérieuses cités d'or, les cités d'or, cités d'or, mystérieuses cités d'or
+Les mystérieuses cités d'or;mco;;les mysterieuses cites d'or, les cites d'or, cites d'or, mysterieuses cites d'or
 Mafalda;mafalda;;mafalda
 Le magicien d'Oz;oz;;le magicien d'oz, magicien d'oz, oz
-Les maîtres de l'univers;musclor;;les maîtres de l'univers, maîtres de l'univers, les maitres de l'univers, maitres de l'univers, musclor
-Martin Mystère;martin;;martin mystère
+Les maîtres de l'univers;musclor;;les maitres de l'univers, maitres de l'univers, musclor
+Martin Mystère;martin;;martin mystere
 Maya l'abeille;maya;;maya l'abeille, maia l'abeille, maya
-Mes tendres années;mta;;mes tendres années
+Mes tendres années;mta;;mes tendres annees
 Mimi cracra;mimi;;mimi cracra,mimicracra
 Les Minipouss;minipouss;;minipouss, les minipouss, les minipouces, minipouces, les minipousses, minipousses
-Les misérables;miserables;;miserables, les misérables, les misérable
-Molierissimo;molierissimo;;molierissimo, molièrissimo
+Les misérables;miserables;;miserables, les miserables, les miserable
+Molierissimo;molierissimo;;molierissimo
 Les mondes engloutis;lme;;les mondes engloutis,mondes engloutis
-Nadia, le secret de l'eau bleue;nadia;;nadia, le secret de l'eau bleue, adia le secret de l eau bleue, academie l'eau bleue, adia l'eau bleue, academie l'eau bleue,nadia,emie l'eau bleue, nadia,emie l'eau bleue
+Nadia, le secret de l'eau bleue;nadia;;nadia le secret de l'eau bleue,nadia
 Nicky Larson;nicky;;nicky larson,niky larson
 Olive et Tom;olive;;olive et tom
-l'Oiseau des mers (Le voyage de l'Albatros);albatros;;l'oiseau des mers (le voyage de l'albatros),l'oiseau des mers, le voyage de l'albatros,oiseau des mers,albatros, voyage de l'albatros
+L'Oiseau des mers (Le voyage de l'Albatros);albatros;;l'oiseau des mers (le voyage de l'albatros),l'oiseau des mers, le voyage de l'albatros,oiseau des mers,albatros, voyage de l'albatros
 Olympe et les dieux;olympe;;olympe et les dieux, olympe
 Omer et le fils  de l'étoile;omer;;omer et le fils  de l'étoile, omer
-Paul le pêcheur;paul;;paul le pêcheur,paul le pecheur
-Père Castor;castor;;père castor,pere castor
+Paul le pêcheur;paul;;paul le pecheur
+Père Castor;castor;;pere castor
 Le petit chef;chef;;le petit chef,le p'tit chef
 Les Pierrafeu;pierrafeu;;les pierrafeu, pierrafeu, les pierrafeus, pierrafeus
-Pôle position;pp;;pôle position,pole position
+Pôle position;pp;;pole position
 Pollyanna;pollyanna;;pollyanna,pollyana,polyanna,polyana,pollianna,polianna,polliana,poliana
 Les Popples;popples;;les popples,popples,les poples, poples
 Princesse Sarah;sarah;;princesse sarah,sarah,princesse sara, sara
@@ -133,52 +133,52 @@ Popeye;popeye;;popeye
 Les quatre filles du docteur March;lqfddm;;les quatre filles du docteur march, les 4 filles du docteur march
 Rahan;rahan;;rahan
 Ranma 1/2;ranma;;ranma 1/2,ranma
-Rémi sans famille;remi;;rémi sans famille,remi sans famille
+Rémi sans famille;remi;;remi sans famille
 Robotech;robotech;;robotech
-Roger Ramjet;ramjet;;roger ramjet,ramjet,roger barbapapas, barbapapas
-Le Roi Arthur et les chevaliers de la justice;arthur;;le roi arthur et les chevaliers de la justice,justice,la,de,chevaliers,les,et,arthur,roi,le barbapapas, barbapapas
-Sab Rider;sabrider;;sab rider,rider,sab barbapapas, barbapapas
+Roger Ramjet;ramjet;;roger ramjet,ramjet
+Le Roi Arthur et les chevaliers de la justice;arthur;;le roi arthur et les chevaliers de la justice,roi arthur, arthur,le roi arthur
+Sab Rider;sabrider;;sab rider,sabrider
 Sailormoon;sailormoon;;sailormoon, sailor moon
-Samouraï Pizza Cat's;spc;;samouraï pizza cat's,samourai pizza cat's,samourais pizza cat's,samouraï pizza cats,samourai pizza cats,samourais pizza cats
-Les samouraïs de l'ï¿½ternel;lsdle;;les samouraïs de l'ï¿½ternel, es samouraïs de l ï ternel, academie l'ï ternel, es l'ï l'ï¿½, academie l'ï l'ï¿½,les saemie l'ï ternel, les saemie l'ï l'ï¿½
-Sandy jonquille;sandy;;sandy jonquille,jonquille,sandy barbapapas, barbapapas
-Satanas et Diabolo;satanas;;satanas et diabolo,diabolo,et,satanas barbapapas, barbapapas
+Samouraï Pizza Cat's;spc;;samourai pizza cat's,samourais pizza cat's,samourai pizza cats,samourais pizza cats
+Les samouraïs de l'éternel;lsdle;;les samourais de l'eternel,samourais de l'eternel,samourai de l'eternel
+Sandy jonquille;sandy;;sandy jonquille,sandy,va sandy
+Satanas et Diabolo;satanas;;satanas et diabolo
 Les Schtroumpfs;schtroumpfs;;schtroumpfs, schtroump, les schtroumpfs, les schtroump
-Scooby-doo;scooby;;scooby-doo,doo,scooby barbapapas, barbapapas
-She-Ra;shera;;she-ra,ra,she barbapapas, barbapapas
-Sherlock Holmes;sherlock;;sherlock holmes,holmes,sherlock barbapapas, barbapapas
+Scooby-doo;scooby;;scooby-doo,scoobydoo,scooby,scoubidou,scouby-doo
+She-Ra;shera;;she-ra,shera
+Sherlock Holmes;sherlock;;sherlock holmes,sherlok holmes,scherlock holmes,scherlok holmes
 Shurato;shurato;;shurato
-Signé Cat's eyes;catseyes;;
-Silver Hawks;silverhawks;;silverhawks, silverhaw, silver hawks, silver hawk
-Les Snorky;snorky;;les snorky,snorky,les barbapapas, barbapapas
+Signé Cat's eyes;catseyes;;signe cat's eyes,signe cats eyes,cat's eyes,cats eyes,cat's eye,cats eye
+Silver Hawks;silverhawks;;silverhawks,silver hawks
+Les Snorky;snorky;;les snorky,snorky,les snorki,snorki,les snorkys,snorkys,les snorkies,snorkies
 Sonic;sonic;;sonic
-Sophie et Virginie;sev;;sophie et virginie,virginie,et,sophie barbapapas, barbapapas
-SOS fantômes;sos;;sos fantômes,fantômes,sos barbapapas, barbapapas
-SOS polluards;polluards;;sos polluards,polluards,sos barbapapas, barbapapas
-Sous le signe des mousquetaires;slsdm;;sous le signe des mousquetaires, slsdm,mousquetaires, slsdm le des chipmunks,slsdm le des chipmuks
-Starcom;starcom;;starcom
-Super Baloo;baloo;;super baloo,baloo,super barbapapas, barbapapas
-Super Mario Bros;mario;;super mario bros, super mario, mario
-Susy aux fleurs magiques;susy;;susy aux fleurs magiques, susy,magiques, susy aux fleurs chipmunks,susy aux fleurs chipmuks
-Tao tao;tao;;tao tao,tao,tao barbapapas, barbapapas
-Tic et Tac, rangers du risque;tictac;;tic et tac, rangers du risque, tictac,et Tac rangers du tictac
-Les Tiny toons;tinytoons;;les tiny toons,toons,tiny,les barbapapas, barbapapas
-Tobikage;tobikage;;tobikage
-Tom Sawyer;sawyer;;tom sawyer,sawyer,tom barbapapas, barbapapas
-Les tortues ninja;tmnt;;les tortues ninja,ninja,tortues,les barbapapas, barbapapas
-Totally spies;spies;;totally spies,spies,totally barbapapas, barbapapas
+Sophie et Virginie;sev;;sophie et virginie
+SOS fantômes;sos;;sos fantomes,ghostbusters,s.o.s fantomes,sos fantome,s.o.s fantome
+SOS polluards;polluards;;sos polluards,polluards
+Sous le signe des mousquetaires;slsdm;;sous le signe des mousquetaires,mousquetaires,les trois mousquetaires,les 3 mousquetaires,trois mousquetaires,3 mousquetaires,le signe des mousquetaires
+Starcom;starcom;;starcom, star com
+Super Baloo;baloo;;super baloo,baloo,super balou,balou
+Super Mario Bros;mario;;super mario bros, super mario, mario,mario bros
+Susy aux fleurs magiques;susy;;susy aux fleurs magiques, susy,suzy aux fleurs magiques,suzy
+Tao tao;tao;;tao tao,taotao
+Tic et Tac, rangers du risque;tictac;;tic et tac rangers du risque, tic et tac,rangers du risque,ranger du risque
+Les Tiny toons;tinytoons;;les tiny toons,tiny toons,tinytoons
+Tobikage;tobikage;;tobikage,tobicage
+Tom Sawyer;sawyer;;tom sawyer
+Les tortues ninja;tmnt;;les tortues ninja,tortues ninja,les tortues ninjas,tortues ninjas,tmnt,tmht
+Totally spies;spies;;totally spies,totaly spies,totallyspies,totalyspies
 Transformers;transformers;;transformers, transformer
-Les trois mousquetaires;3mousquetaires;;les trois mousquetaires,mousquetaires,trois,les barbapapas, barbapapas
-Ty et Uan;tyuan;;ty et uan,uan,et,ty barbapapas, barbapapas
-Le tour du monde en 80 jours;tdm80;;le tour du monde en 80 jours, tdm80,jours, tdm80 tour en chipmunks,tdm80 tour en chipmuks
+Les trois mousquetaires;3mousquetaires;;les trois mousquetaires,mousquetaires,trois mousquetaires,les 3 mousquetaires,3 mousquetaires
+Ty et Uan;tyuan;;ty et uan,ty et huan,ti et uan,ti et huan
+Le tour du monde en 80 jours;tdm80;;le tour du monde en 80 jours,tour du monde en 80 jours
 Le tour du monde de Lydie;lydie;;le tour du monde de lydie, lydie,tour du monde de lydie
-T'as l'bonjour d'Albert;albert;;t'as l'bonjour d'albert,d'albert,l'bonjour,t'as barbapapas, barbapapas
-Tchaou et Grodo;tchaou;;tchaou et grodo,grodo,et,tchaou barbapapas, barbapapas
-Ulysse 31;ulysse;;ulysse 31,ulysse barbapapas, barbapapas
-Les visonnaires;visonnaires;;visonnaires, visonnair, les visonnaires, les visonnair
-Vanessa et la magie des rï¿½ves;vanessa;;vanessa et la magie des rï¿½ves, vanessa,ves, vanessa et rï chipmunks,vanessa et rï chipmuks
-Vas-y Julie;julie;;vas-y julie,julie,y,vas barbapapas, barbapapas
-Willy boy;willyboy;;willy boy,boy,willy barbapapas, barbapapas
+T'as l'bonjour d'Albert;albert;;t'as l'bonjour d'albert,albert,t'as le bonjour d'albert,tu as le bonjour d'albert
+Tchaou et Grodo;tchaou;;tchaou et grodo,chaou et grodo
+Ulysse 31;ulysse;;ulysse 31,ulysse,ulysse reviens,ulysse revient
+Les visonnaires;visonnaires;;visonnaires,les visionnaires,visionnaries,les visonaires,visionaires,visionaries
+Vanessa et la magie des rêves;vanessa;;vanessa et la magie des reves, vanessa
+Vas-y Julie;julie;;vas-y julie,julie
+Willy boy;willyboy;;willy boy,willyboy
 Wingman;wingman;;wingman
-Winnie l'ourson;winnie;;winnie l'ourson, innie l, academie Winnie l'ourson, o Winnie l'our, academie Winnie l'our,winnieemie Winnie l'ourson, winnieemie Winnie l'our
+Winnie l'ourson;winnie;;winnie l'ourson, winie l'ourson,winny l'ourson,winy l'ourson,wini l'ourson,winni l'ourson
 Yakari;yakari;;yakari
