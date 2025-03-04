@@ -43,16 +43,13 @@ export function ImageToggle({ anime }: { anime: Anime }) {
         >
           Indice facile
         </Button>
-        <Button
-          className="text-xl px-8 py-6"
-          size={"lg"}
-          variant={"secondary"}
-          onClick={() => setIsTitleHintDisplayed(true)}
-        >
+      </div>
+      <div className="flex gap-4 w-full items-center">
+        <Button className="text-xl px-8 py-6" variant={"secondary"} onClick={() => setIsTitleHintDisplayed(true)}>
           Indice titre
         </Button>
+        {isTitleHintDisplayed && <p className="text-2xl tracking-[0.2em]">{toHiddenTitle(anime.title)}</p>}
       </div>
-      {isTitleHintDisplayed && <p className="text-2xl tracking-[0.2em]">{toHiddenTitle(anime.title)}</p>}
     </div>
   );
 }
