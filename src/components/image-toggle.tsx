@@ -4,6 +4,7 @@ import { Anime } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { cn } from "@/lib/utils";
 
 const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
 
@@ -27,17 +28,17 @@ export function ImageToggle({ anime }: { anime: Anime }) {
       />
       <div className="flex gap-4">
         <Button
-          className="text-xl px-8 py-6"
+          className={cn("text-xl px-8 py-6", { "border border-gray-200": hintType === "easy" })}
           size={"lg"}
-          variant={hintType === "hard" ? "outline" : "secondary"}
+          variant={"outline"}
           onClick={() => setHintType("hard")}
         >
           Indice difficile
         </Button>
         <Button
-          className="text-xl px-8 py-6"
+          className={cn("text-xl px-8 py-6", { "border border-gray-200": hintType === "hard" })}
           size={"lg"}
-          variant={hintType === "easy" ? "outline" : "secondary"}
+          variant={"outline"}
           onClick={() => setHintType("easy")}
         >
           Indice facile
