@@ -28,8 +28,20 @@ export function checkAnswer(anime: Anime, answer: string) {
   return success;
 }
 
-export function youtubeUrlToEmbed(youtubeUrl: string) {
+export function videoUrlToEmbed(videoUrl: string) {
+  if (videoUrl.includes("youtube")) {
+    return youtubeUrlToEmbed(videoUrl);
+  } else if (videoUrl.includes("dailymotion")) {
+    return dailymotionUrlToEmbed(videoUrl);
+  }
+}
+
+function youtubeUrlToEmbed(youtubeUrl: string) {
   return youtubeUrl.replace("/watch?v=", "/embed/");
+}
+
+function dailymotionUrlToEmbed(dailymotionUrl: string) {
+  return dailymotionUrl.replace("/video/", "/embed/video/");
 }
 
 // https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
