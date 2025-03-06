@@ -20,7 +20,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
   return (
     <div className="grid gap-4 place-items-center">
       <Image
-        className="aspect-4/3 object-cover w-full h-[600px]"
+        className="aspect-4/3 object-cover w-full h-[500px]"
         src={hintType === "easy" ? PREFIX + anime.easyHint : PREFIX + anime.hardHint}
         width={800}
         height={600}
