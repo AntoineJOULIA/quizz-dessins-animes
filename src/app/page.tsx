@@ -1,42 +1,26 @@
 import { NewGameButton } from "@/components/new-game-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { Bungee_Shade, Damion } from "next/font/google";
-
-const bungeeShade = Bungee_Shade({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const damion = Damion({
-  weight: "400",
-  subsets: ["latin"],
-  display: "swap",
-});
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center mx-auto grow gap-32 mt-24">
-      <div className="grid gap-6 content-center text-center">
-        <h1 className={`text-8xl ${bungeeShade.className}`}>Grand quizz</h1>
-        <div>
-          <p className="text-6xl">
-            Sur les <span className={`text-8xl ${damion.className}`}>dessins animés</span>
-          </p>
-          <p className="text-6xl">de notre enfance</p>
-        </div>
-      </div>
-      <div className="flex gap-8">
+    <div className="flex flex-col items-center mx-auto grow">
+      <Image
+        src="/assets/homepage/homepage_illu.png"
+        width={1000}
+        height={686}
+        alt="Grand Quizz des dessins animés de notre enfance"
+      />
+      <div className="flex gap-4">
         <NewGameButton />
-        <Button asChild variant={"outline"} size={"lg"} className="text-2xl font-bold px-12 py-8">
+        <Button asChild variant={"outline"} size={"lg"} className="">
           <Link className="flex items-center gap-4" href="/1">
             <svg className="size-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 11">
-              <path
-                fill="#000"
-                d="M3 0C1.355 0 0 1.355 0 3v4c0 1.645 1.355 3 3 3 0 .554.446 1 1 1h2c.554 0 1-.446 1-1h9c0 .554.446 1 1 1h2a.998.998 0 0 0 .984-1.174C21.151 9.414 22 8.3 22 7V3c0-1.645-1.355-3-3-3H3zm0 2h16c.571 0 1 .429 1 1v4c0 .571-.429 1-1 1H3c-.571 0-1-.429-1-1V3c0-.571.429-1 1-1zm2 1c-.554 0-1 .446-1 1s.446 1 1 1h8c.554 0 1-.446 1-1s-.446-1-1-1H5zm13 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1zm0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1z"
-                color="#000"
-              />
+              <g fill="currentColor">
+                <path d="M3 .5A2.506 2.506 0 0 0 .5 3v4C.5 8.376 1.624 9.5 3 9.5h16c1.376 0 2.5-1.124 2.5-2.5V3c0-1.376-1.124-2.5-2.5-2.5Zm0 1h16c.84 0 1.5.66 1.5 1.5v4c0 .84-.66 1.5-1.5 1.5H3c-.84 0-1.5-.66-1.5-1.5V3c0-.84.66-1.5 1.5-1.5Z" />
+                <path d="M5 3c-.545 0-1 .455-1 1 0 .545.455 1 1 1h8c.545 0 1-.455 1-1 0-.545-.455-1-1-1H5zm13 0a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1zm0 2a1 1 0 0 0-1 1 1 1 0 0 0 1 1 1 1 0 0 0 1-1 1 1 0 0 0-1-1zM4 9c-.554 0-1 .446-1 1s.446 1 1 1h2c.554 0 1-.446 1-1s-.446-1-1-1H4zm13 0c-.554 0-1 .446-1 1s.446 1 1 1h2c.554 0 1-.446 1-1s-.446-1-1-1h-2z" />
+              </g>
             </svg>
             Continuer
           </Link>

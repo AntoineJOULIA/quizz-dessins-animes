@@ -13,8 +13,8 @@ export function NewGameButton() {
   }
 
   return (
-    <Button className="text-2xl font-bold px-12 py-8" onClick={handleClick}>
-      <Tv className="h-8 w-8 mr-4" />
+    <Button size={"lg"} className="" onClick={handleClick}>
+      <Tv className="mr-2" />
       Nouvelle partie
     </Button>
   );
