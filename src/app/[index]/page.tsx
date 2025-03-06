@@ -54,34 +54,5 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
         <div></div>
       )}
     </div>
-    // <div className="grid grid-rows-[auto_1fr] grid-cols-[1rem_90px_3fr_2fr_90px_1rem] gap-x-20 gap-y-8">
-    //   <div className="row-span-2"></div>
-    //   <p className="col-start-3 col-span-3 text-6xl font-black">{anime.index.toString().padStart(3, "0")}</p>
-    //   <div className="row-span-2"></div>
-    //   {prevId > 0 ? (
-    //     <Link
-    //       href={`/${prevId}`}
-    //       className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
-    //     >
-    //       <ChevronLeft className="h-4 w-4 mr-2" />
-    //       {prevId.toString().padStart(3, "0")}
-    //     </Link>
-    //   ) : (
-    //     <div></div>
-    //   )}
-    //   <ImageToggle anime={anime} />
-    //   <AnswerForm anime={anime} />
-    //   {nextId <= getAnimes().length ? (
-    //     <Link
-    //       href={`/${nextId}`}
-    //       className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
-    //     >
-    //       {nextId.toString().padStart(3, "0")}
-    //       <ChevronRight className="h-4 w-4 ml-2" />
-    //     </Link>
-    //   ) : (
-    //     <div></div>
-    //   )}
-    // </div>
   );
 }
