@@ -8,14 +8,17 @@ import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/t
 import { getAnimes } from "@/lib/db";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { useDragonBalls } from "@/hooks/useDragonBalls";
 
 export function AnswerBoard({ animes }: { animes: Anime[] }) {
   const [animeStatus] = useAnimeStatus();
   const totalCount = getAnimes().length;
 
+  const { foundDragonBalls } = useDragonBalls();
+
   return (
     <div className="container space-y-8 mx-auto relative">
-      <Score statusList={animeStatus} totalCount={totalCount} />
+      <Score statusList={animeStatus} totalCount={totalCount} foundDragonBalls={foundDragonBalls} />
       <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4">
         {animes.map((anime) => (
           <BoardItem key={anime.id} anime={anime} status={animeStatus[anime.id]} />
@@ -28,11 +31,13 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
 function Score({
   statusList,
   totalCount,
+  foundDragonBalls,
 }: {
   statusList: {
     [key: string]: Status;
   };
   totalCount: number;
+  foundDragonBalls: string[];
 }) {
   const correctCount = Object.values(statusList).filter((status) => status === "correct").length;
   return (
@@ -42,7 +47,7 @@ function Score({
       </p>
       <Image src="/assets/images/dragon-ball_radar.png" width={50} height={50} alt="Détecteur de dragon balls" />
       {/* <TrophyBar correctCount={correctCount} totalCount={totalCount} /> */}
-      <DragonBallCollection found={[1, 2, 4, 5, 7]} />
+      <DragonBallCollection found={foundDragonBalls} />
     </div>
   );
 }
@@ -75,10 +80,10 @@ function BoardItem({ anime, status }: { anime: Anime; status: Status }) {
   );
 }
 
-function DragonBallCollection({ found }: { found: number[] }) {
+function DragonBallCollection({ found }: { found: string[] }) {
   return (
     <div className="grid grid-cols-[repeat(3,50px)] gap-2 place-items-center">
-      {found.includes(1) ? (
+      {found.includes("1") ? (
         <Image
           className="col-start-2 row-span-2"
           src="/assets/images/dragon-ball_1-etoile.png"
@@ -89,7 +94,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="col-start-2 row-span-2" />
       )}
-      {found.includes(2) ? (
+      {found.includes("2") ? (
         <Image
           className="row-start-2 row-span-2"
           src="/assets/images/dragon-ball_2-etoiles.png"
@@ -100,7 +105,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="row-start-2 row-span-2" />
       )}
-      {found.includes(3) ? (
+      {found.includes("3") ? (
         <Image
           className="col-start-3 row-start-2 row-span-2"
           src="/assets/images/dragon-ball_3-etoiles.png"
@@ -111,7 +116,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="col-start-3 row-start-2 row-span-2" />
       )}
-      {found.includes(4) ? (
+      {found.includes("4") ? (
         <Image
           className="col-start-2 row-start-3 row-span-2"
           src="/assets/images/dragon-ball_4-etoiles.png"
@@ -122,7 +127,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="col-start-2 row-start-3 row-span-2" />
       )}
-      {found.includes(5) ? (
+      {found.includes("5") ? (
         <Image
           className="col-start-1 row-start-4 row-span-2"
           src="/assets/images/dragon-ball_5-etoiles.png"
@@ -133,7 +138,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="col-start-1 row-start-4 row-span-2" />
       )}
-      {found.includes(6) ? (
+      {found.includes("6") ? (
         <Image
           className="col-start-3 row-start-4 row-span-2"
           src="/assets/images/dragon-ball_6-etoiles.png"
@@ -144,7 +149,7 @@ function DragonBallCollection({ found }: { found: number[] }) {
       ) : (
         <EmptySlot className="col-start-3 row-start-4 row-span-2" />
       )}
-      {found.includes(7) ? (
+      {found.includes("7") ? (
         <Image
           className="col-start-2 row-start-5 row-span-2"
           src="/assets/images/dragon-ball_7-etoiles.png"

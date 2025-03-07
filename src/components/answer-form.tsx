@@ -11,6 +11,7 @@ import { checkAnswer, errorPrimaryMessage, errorSecondaryMessage, videoUrlToEmbe
 import { useState } from "react";
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Frown, SearchCheck, Trophy } from "lucide-react";
+import { useDragonBalls } from "@/hooks/useDragonBalls";
 
 const formSchema = z.object({
   answer: z
@@ -23,6 +24,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [animeStatus, updateStatus] = useAnimeStatus();
+  const { updateDragonBallCollection } = useDragonBalls();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -38,6 +40,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       if (animeStatus[anime.id] === "correct") return;
 
       updateStatus(anime.id, "correct");
+      updateDragonBallCollection(anime.index);
     } else {
       setIsSuccess(false);
       updateStatus(anime.id, "wrong");
@@ -47,6 +50,18 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   const isFound = animeStatus[anime.id] === "correct" || isSuccess;
 
   if (isFound) {
+    // let newFoundDragonBall = null;
+    // hiddenDragonBalls.values().forEach((ball) => {
+    //   if (!ball[anime.index]) {
+    //     return;
+    //   }
+    //   newFoundDragonBall = ball[anime.index];
+    // });
+    // if (newFoundDragonBall !== null) {
+    //   updateDragonBallCollection(anime.index);
+    // }
+    updateDragonBallCollection("1");
+
     return (
       <div className="flex flex-col gap-12">
         <div className="flex gap-4">
