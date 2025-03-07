@@ -4,16 +4,19 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 import { Button } from "@/components/ui/button";
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
 import { checkAnswer, videoUrlToEmbed } from "@/lib/utils";
 import { useState } from "react";
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
-import { Frown, Trophy } from "lucide-react";
+import { Frown, SearchCheck, Trophy } from "lucide-react";
 
 const formSchema = z.object({
-  answer: z.string().min(1),
+  answer: z
+    .string()
+    .min(1, { message: "Aucun dessin animé n'a un titre aussi court !" })
+    .max(50, { message: "Aucun dessin animé n'a un titre aussi long !" }),
 });
 
 export default function AnswerForm({ anime }: { anime: Anime }) {
@@ -76,23 +79,26 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             name="answer"
             render={({ field }) => (
               <FormItem>
-                <FormLabel className="text-2xl font-bold">Réponse</FormLabel>
+                <FormLabel className="text-2xl font-bold">Quel est ce dessin animé ?</FormLabel>
                 <FormControl>
                   <Input
                     className="text-2xl md:text-2xl p-8"
                     placeholder="Ma réponse"
                     type="string"
+                    // autoComplete="off"
                     {...field}
                     onChange={(event) => field.onChange(event.target.value)}
                     onFocus={() => setSubmitted(false)}
                   />
                 </FormControl>
+                <FormDescription>Il s&apos;agit du titre français</FormDescription>
                 <FormMessage />
               </FormItem>
             )}
           />
           <Button className="text-2xl font-bold px-12 py-8" type="submit">
             Vérifier
+            <SearchCheck className="size-8 mr-2" />
           </Button>
         </form>
       </Form>
@@ -101,6 +107,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
         <div className="grid grid-cols-[min-content_1fr] gap-4 content-start">
           <Frown className="size-10 text-red-500" />
           <p className="text-4xl font-bold">Mauvaise réponse !</p>
+          <p className="text-2xl col-start-2">Pas facile, hein ?</p>
           <p className="text-2xl col-start-2">Essaye encore !</p>
         </div>
       )}
