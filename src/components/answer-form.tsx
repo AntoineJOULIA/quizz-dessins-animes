@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
-import { checkAnswer, videoUrlToEmbed } from "@/lib/utils";
+import { checkAnswer, errorPrimaryMessage, errorSecondaryMessage, videoUrlToEmbed } from "@/lib/utils";
 import { useState } from "react";
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Frown, SearchCheck, Trophy } from "lucide-react";
@@ -106,9 +106,9 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       {submitted && (
         <div className="grid grid-cols-[min-content_1fr] gap-4 content-start">
           <Frown className="size-10 text-red-500" />
-          <p className="text-4xl font-bold">Mauvaise réponse !</p>
-          <p className="text-2xl col-start-2">Pas facile, hein ?</p>
-          <p className="text-2xl col-start-2">Essaye encore !</p>
+          <p className="text-4xl font-bold">{errorPrimaryMessage()}</p>
+          <p className="text-2xl col-start-2">{errorSecondaryMessage()}</p>
+          <p className="text-2xl col-start-2 font-bold">Essaye encore !</p>
         </div>
       )}
     </div>
