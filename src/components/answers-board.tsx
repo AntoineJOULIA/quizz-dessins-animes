@@ -6,6 +6,7 @@ import { CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { getAnimes } from "@/lib/db";
+import { cn } from "@/lib/utils";
 
 export function AnswerBoard({ animes }: { animes: Anime[] }) {
   const [animeStatus] = useAnimeStatus();
@@ -47,7 +48,10 @@ function BoardItem({ anime, status }: { anime: Anime; status: Status }) {
         <TooltipTrigger>
           <Link
             href={`/${anime.index}`}
-            className="flex items-center gap-2 p-4 rounded-lg outline outline-gray-200 outline-1"
+            className={cn("flex items-center gap-2 p-4 rounded-lg border border-gray-200 hover:bg-gray-100", {
+              "bg-yellow-50 border-yellow-500 hover:bg-yellow-100": status === "correct",
+              "bg-red-50 border-red-500 hover:bg-red-100": status === "wrong",
+            })}
           >
             <p>{anime.index.padStart(3, "0")}</p>
             {status === "correct" ? (
