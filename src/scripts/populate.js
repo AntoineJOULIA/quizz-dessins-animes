@@ -42,6 +42,8 @@ const animesWithConvertedAcceptedAnswers = shuffledAnimes.map((anime) => {
 });
 
 const sample = animesWithConvertedAcceptedAnswers.filter((anime) => hasImage(anime.id));
+const rejected = animesWithConvertedAcceptedAnswers.filter((anime) => !hasImage(anime.id));
+console.log("Rejected animes", rejected);
 
 // Add index property
 const animes = sample.map((item, index) => {
