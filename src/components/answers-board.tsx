@@ -18,7 +18,7 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
 
   return (
     <div className="container space-y-8 mx-auto relative">
-      <Score statusList={animeStatus} totalCount={totalCount} foundDragonBalls={foundDragonBalls} />
+      <Achievements statusList={animeStatus} totalCount={totalCount} foundDragonBalls={foundDragonBalls} />
       <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4">
         {animes.map((anime) => (
           <BoardItem key={anime.id} anime={anime} status={animeStatus[anime.id]} />
@@ -28,7 +28,7 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
   );
 }
 
-function Score({
+function Achievements({
   statusList,
   totalCount,
   foundDragonBalls,
@@ -41,13 +41,20 @@ function Score({
 }) {
   const correctCount = Object.values(statusList).filter((status) => status === "correct").length;
   return (
-    <div>
-      <p className="text-2xl text-center">
-        Score actuel : <span className="text-6xl font-black">{correctCount}</span> / {totalCount}
-      </p>
-      <Image src="/assets/images/dragon-ball_radar.png" width={50} height={50} alt="Détecteur de dragon balls" />
-      {/* <TrophyBar correctCount={correctCount} totalCount={totalCount} /> */}
-      <DragonBallCollection found={foundDragonBalls} />
+    <div className="grid grid-cols-2 gap-4">
+      <Score correctCount={correctCount} totalCount={totalCount} />
+      <Sanctuary correctCount={correctCount} totalCount={totalCount} />
+      {/* <div className="bg-amber-100 rounded-lg flex flex-col items-center p-4 gap-2">
+        <p className="text-2xl">Statut</p>
+        <Knight correctCount={correctCount} totalCount={totalCount} />
+      </div> */}
+      <div className="bg-green-100 rounded-lg flex flex-col items-center p-4">
+        <p className="text-2xl">Boules de cristal</p>
+        <div className="flex gap-8 items-center">
+          <Image src="/assets/images/dragon-ball_radar.png" width={50} height={50} alt="Détecteur de dragon balls" />
+          <DragonBallCollection found={foundDragonBalls} />
+        </div>
+      </div>
     </div>
   );
 }
@@ -77,6 +84,185 @@ function BoardItem({ anime, status }: { anime: Anime; status: Status }) {
         <TooltipContent>{status === "correct" ? anime.title : "Pas encore trouvé !"}</TooltipContent>
       </Tooltip>
     </TooltipProvider>
+  );
+}
+
+function Score({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
+  return (
+    <div className="flex flex-col items-center p-4 col-span-2">
+      <p className="text-xl">Dessins animés trouvés</p>
+      <p className="text-xl">
+        {" "}
+        <span className="text-6xl font-black">{correctCount}</span> / {totalCount}
+      </p>
+    </div>
+  );
+}
+
+function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
+  const currentScore = correctCount / totalCount;
+  return (
+    <div className="bg-sky-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
+      <Image
+        className=""
+        src="/assets/images/horloge-sanctuaire.png"
+        width={50}
+        height={50}
+        alt="Horloge du Sanctuaire"
+      />
+      <p className="text-2xl font-bold col-span-2 gap-4">Sanctuaire</p>
+      <div className="col-start-2 flex flex-col gap-2">
+        <p>Traverse les 12 maisons du sanctuaire pour atteindre le Grand Pope.</p>
+        <p>Chaque bonne réponse te rapproche de ton objectif !</p>
+        {correctCount >= totalCount - 5 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison des</p>
+            <p className="self-center text-2xl font-bold">Poissons</p>
+          </>
+        ) : currentScore >= 0.9 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Verseau</p>
+          </>
+        ) : currentScore >= 0.8 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Capricorne</p>
+          </>
+        ) : currentScore >= 0.7 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Sagittaire</p>
+          </>
+        ) : currentScore >= 0.6 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Scorpion</p>
+          </>
+        ) : currentScore >= 0.5 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison de la</p>
+            <p className="self-center text-2xl font-bold">Balance</p>
+          </>
+        ) : currentScore >= 0.4 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison de la</p>
+            <p className="self-center text-2xl font-bold">Vierge</p>
+          </>
+        ) : currentScore >= 0.3 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Lion</p>
+          </>
+        ) : currentScore >= 0.2 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Cancer</p>
+          </>
+        ) : currentScore >= 0.1 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison des</p>
+            <p className="self-center text-2xl font-bold">Gémeaux</p>
+          </>
+        ) : correctCount >= 5 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Taureau</p>
+          </>
+        ) : (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
+            <p className="self-center text-2xl font-bold">Bélier</p>
+          </>
+        )}
+      </div>
+      <div className="grid grid-cols-[repeat(4,50px)] gap-2 place-content-center">
+        <Image
+          className=""
+          src="/assets/images/chevalier-or_belier.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Bélier"
+        />
+        <Image
+          className={cn({ "opacity-50": correctCount < 5 })}
+          src="/assets/images/chevalier-or_taureau.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Taureau"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.1 })}
+          src="/assets/images/chevalier-or_gemeaux.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or des Gémeaux"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.2 })}
+          src="/assets/images/chevalier-or_cancer.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Cancer"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.3 })}
+          src="/assets/images/chevalier-or_lion.jpg"
+          width={50}
+          height={60}
+          alt="Chevlier d'or du Lion"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.4 })}
+          src="/assets/images/chevalier-or_vierge.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or de la Vierge"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.5 })}
+          src="/assets/images/chevalier-or_balance.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or de la Balance"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.6 })}
+          src="/assets/images/chevalier-or_scorpion.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Scorpion"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.7 })}
+          src="/assets/images/chevalier-or_sagittaire.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Sagittaire"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.8 })}
+          src="/assets/images/chevalier-or_capricorne.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Capricorne"
+        />
+        <Image
+          className={cn({ "opacity-50": currentScore < 0.9 })}
+          src="/assets/images/chevalier-or_verseau.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or du Verseau"
+        />
+        <Image
+          className={cn({ "opacity-50": correctCount < totalCount - 5 })}
+          src="/assets/images/chevalier-or_poissons.jpg"
+          width={50}
+          height={60}
+          alt="Chevalier d'or des Poissons"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -164,99 +350,34 @@ function DragonBallCollection({ found }: { found: string[] }) {
   );
 }
 
-// https://www.citypng.com/photo/27988/hd-png-dragon-ball-z-dbz-crystal-ball-4-stars
-function TrophyBar({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
-  const currentScore = correctCount / totalCount;
-  return (
-    <>
-      {correctCount === totalCount ? (
-        <div className="absolute inset-0 grid justify-items-center">
-          <Image
-            className="h-[80vh] w-auto place-self-center"
-            src="/assets/images/dragon-ball_shenron.png"
-            width={1140}
-            height={1656}
-            alt="Shenron, le dragon sacré"
-          />
-        </div>
-      ) : (
-        <div className="grid grid-cols-[repeat(3,50px)] gap-2">
-          {/* {correctCount >= 5 && 
-            <Image src="/assets/images/dragon-ball_1-etoile.png" width={50} height={50} alt="Dragon ball à 1 étoile" />
-          }
-      {correctCount >= 10 && 
-            <Image src="/assets/images/dragon-ball_2-etoiles.png" width={50} height={50} alt="Dragon ball à 2 étoiles" />
-      } */}
-
-          {correctCount >= 1 && (
-            <Image
-              className="col-start-2 row-span-2"
-              src="/assets/images/dragon-ball_1-etoile.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 1 étoile"
-            />
-          )}
-          {correctCount >= 2 && (
-            <Image
-              className="row-start-2 row-span-2"
-              src="/assets/images/dragon-ball_2-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 2 étoiles"
-            />
-          )}
-          {currentScore >= 0.175 && (
-            <Image
-              className="col-start-3 row-start-2 row-span-2"
-              src="/assets/images/dragon-ball_3-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 3 étoiles"
-            />
-          )}
-          {currentScore >= 0.3 && (
-            <Image
-              className="col-start-2 row-start-3 row-span-2"
-              src="/assets/images/dragon-ball_4-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 3 étoiles"
-            />
-          )}
-          {currentScore >= 0.5 && (
-            <Image
-              className="col-start-1 row-start-4 row-span-2"
-              src="/assets/images/dragon-ball_5-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 5 étoiles"
-            />
-          )}
-          {currentScore >= 0.75 && (
-            <Image
-              className="col-start-3 row-start-4 row-span-2"
-              src="/assets/images/dragon-ball_6-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 6 étoiles"
-            />
-          )}
-          {correctCount >= totalCount - 1 && (
-            <Image
-              className="col-start-2 row-start-5 row-span-2"
-              src="/assets/images/dragon-ball_7-etoiles.png"
-              width={50}
-              height={50}
-              alt="Dragon ball à 6 étoiles"
-            />
-          )}
-        </div>
-      )}
-    </>
-  );
-}
-
+// function Knight({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
+//   const currentScore = correctCount / totalCount;
+//   if (correctCount >= totalCount - 1) {
+//     // if (correctCount >= totalCount - 5) {
+//     return (
+//       <div className="">
+//         <Image src={"/assets/images/pandora-box-god.png"} width={50} height={50} alt="Chevalier divin" />
+//         Chevalier divin
+//       </div>
+//     );
+//   }
+//   if (currentScore > 0.8) {
+//     return <div className="">Chevalier d&apos;or</div>;
+//   }
+//   if (currentScore > 0.5) {
+//     return <div className="">Chevalier d&apos;argent</div>;
+//   }
+//   if (correctCount >= 1) {
+//     // if (correctCount >= 5) {
+//     return (
+//       <div className="flex flex-col items-center justify-end gap-2 grow">
+//         <Image src={"/assets/images/pandora-box-bronze.png"} width={75} height={75} alt="Boîte d'armure de bronze" />
+//         <p className="text-2xl font-bold">Chevalier de bronze</p>
+//       </div>
+//     );
+//   }
+//   return <div className="">Apprenti chevalier</div>;
+// }
 function EmptySlot({ className }: { className?: string }) {
   return (
     <div
