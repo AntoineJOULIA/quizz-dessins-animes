@@ -41,20 +41,10 @@ function Achievements({
 }) {
   const correctCount = Object.values(statusList).filter((status) => status === "correct").length;
   return (
-    <div className="grid grid-cols-2 gap-4">
+    <div className="grid grid-cols-2 gap-x-8 gap-y-2">
       <Score correctCount={correctCount} totalCount={totalCount} />
       <Sanctuary correctCount={correctCount} totalCount={totalCount} />
-      {/* <div className="bg-amber-100 rounded-lg flex flex-col items-center p-4 gap-2">
-        <p className="text-2xl">Statut</p>
-        <Knight correctCount={correctCount} totalCount={totalCount} />
-      </div> */}
-      <div className="bg-green-100 rounded-lg flex flex-col items-center p-4">
-        <p className="text-2xl">Boules de cristal</p>
-        <div className="flex gap-8 items-center">
-          <Image src="/assets/images/dragon-ball_radar.png" width={50} height={50} alt="Détecteur de dragon balls" />
-          <DragonBallCollection found={foundDragonBalls} />
-        </div>
-      </div>
+      <DragonBallCollection found={foundDragonBalls} />
     </div>
   );
 }
@@ -268,116 +258,102 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
 
 function DragonBallCollection({ found }: { found: string[] }) {
   return (
-    <div className="grid grid-cols-[repeat(3,50px)] gap-2 place-items-center">
-      {found.includes("1") ? (
-        <Image
-          className="col-start-2 row-span-2"
-          src="/assets/images/dragon-ball_1-etoile.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 1 étoile"
-        />
-      ) : (
-        <EmptySlot className="col-start-2 row-span-2" />
-      )}
-      {found.includes("2") ? (
-        <Image
-          className="row-start-2 row-span-2"
-          src="/assets/images/dragon-ball_2-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 2 étoiles"
-        />
-      ) : (
-        <EmptySlot className="row-start-2 row-span-2" />
-      )}
-      {found.includes("3") ? (
-        <Image
-          className="col-start-3 row-start-2 row-span-2"
-          src="/assets/images/dragon-ball_3-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 3 étoiles"
-        />
-      ) : (
-        <EmptySlot className="col-start-3 row-start-2 row-span-2" />
-      )}
-      {found.includes("4") ? (
-        <Image
-          className="col-start-2 row-start-3 row-span-2"
-          src="/assets/images/dragon-ball_4-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 4 étoiles"
-        />
-      ) : (
-        <EmptySlot className="col-start-2 row-start-3 row-span-2" />
-      )}
-      {found.includes("5") ? (
-        <Image
-          className="col-start-1 row-start-4 row-span-2"
-          src="/assets/images/dragon-ball_5-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 5 étoiles"
-        />
-      ) : (
-        <EmptySlot className="col-start-1 row-start-4 row-span-2" />
-      )}
-      {found.includes("6") ? (
-        <Image
-          className="col-start-3 row-start-4 row-span-2"
-          src="/assets/images/dragon-ball_6-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 6 étoiles"
-        />
-      ) : (
-        <EmptySlot className="col-start-3 row-start-4 row-span-2" />
-      )}
-      {found.includes("7") ? (
-        <Image
-          className="col-start-2 row-start-5 row-span-2"
-          src="/assets/images/dragon-ball_7-etoiles.png"
-          width={50}
-          height={50}
-          alt="Dragon ball à 7 étoiles"
-        />
-      ) : (
-        <EmptySlot className="col-start-2 row-start-5 row-span-2" />
-      )}
+    <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
+      <Image
+        className=""
+        src="/assets/images/dragon-ball_radar.png"
+        width={50}
+        height={50}
+        alt="Détecteur de dragon balls"
+      />
+      <p className="text-2xl font-bold col-span-2 gap-4">Boules de cristal</p>
+      <div className="col-start-2 flex flex-col gap-2">
+        <p>Pars à la recherche des boules de cristal disséminées dans le jeu.</p>
+        <p>Trouve les 7 boules et le Dragon Sacré exhaussera un voeu !</p>
+      </div>
+      <div className="grid grid-cols-[repeat(3,50px)] gap-2 place-items-center place-content-center">
+        {found.includes("1") ? (
+          <Image
+            className="col-start-2 row-span-2"
+            src="/assets/images/dragon-ball_1-etoile.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 1 étoile"
+          />
+        ) : (
+          <EmptySlot className="col-start-2 row-span-2" />
+        )}
+        {found.includes("2") ? (
+          <Image
+            className="row-start-2 row-span-2"
+            src="/assets/images/dragon-ball_2-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 2 étoiles"
+          />
+        ) : (
+          <EmptySlot className="row-start-2 row-span-2" />
+        )}
+        {found.includes("3") ? (
+          <Image
+            className="col-start-3 row-start-2 row-span-2"
+            src="/assets/images/dragon-ball_3-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 3 étoiles"
+          />
+        ) : (
+          <EmptySlot className="col-start-3 row-start-2 row-span-2" />
+        )}
+        {found.includes("4") ? (
+          <Image
+            className="col-start-2 row-start-3 row-span-2"
+            src="/assets/images/dragon-ball_4-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 4 étoiles"
+          />
+        ) : (
+          <EmptySlot className="col-start-2 row-start-3 row-span-2" />
+        )}
+        {found.includes("5") ? (
+          <Image
+            className="col-start-1 row-start-4 row-span-2"
+            src="/assets/images/dragon-ball_5-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 5 étoiles"
+          />
+        ) : (
+          <EmptySlot className="col-start-1 row-start-4 row-span-2" />
+        )}
+        {found.includes("6") ? (
+          <Image
+            className="col-start-3 row-start-4 row-span-2"
+            src="/assets/images/dragon-ball_6-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 6 étoiles"
+          />
+        ) : (
+          <EmptySlot className="col-start-3 row-start-4 row-span-2" />
+        )}
+        {found.includes("7") ? (
+          <Image
+            className="col-start-2 row-start-5 row-span-2"
+            src="/assets/images/dragon-ball_7-etoiles.png"
+            width={50}
+            height={50}
+            alt="Dragon ball à 7 étoiles"
+          />
+        ) : (
+          <EmptySlot className="col-start-2 row-start-5 row-span-2" />
+        )}
+      </div>
     </div>
   );
 }
 
-// function Knight({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
-//   const currentScore = correctCount / totalCount;
-//   if (correctCount >= totalCount - 1) {
-//     // if (correctCount >= totalCount - 5) {
-//     return (
-//       <div className="">
-//         <Image src={"/assets/images/pandora-box-god.png"} width={50} height={50} alt="Chevalier divin" />
-//         Chevalier divin
-//       </div>
-//     );
-//   }
-//   if (currentScore > 0.8) {
-//     return <div className="">Chevalier d&apos;or</div>;
-//   }
-//   if (currentScore > 0.5) {
-//     return <div className="">Chevalier d&apos;argent</div>;
-//   }
-//   if (correctCount >= 1) {
-//     // if (correctCount >= 5) {
-//     return (
-//       <div className="flex flex-col items-center justify-end gap-2 grow">
-//         <Image src={"/assets/images/pandora-box-bronze.png"} width={75} height={75} alt="Boîte d'armure de bronze" />
-//         <p className="text-2xl font-bold">Chevalier de bronze</p>
-//       </div>
-//     );
-//   }
-//   return <div className="">Apprenti chevalier</div>;
-// }
 function EmptySlot({ className }: { className?: string }) {
   return (
     <div
