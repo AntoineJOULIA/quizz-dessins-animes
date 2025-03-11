@@ -6,7 +6,7 @@ import { CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { getAnimes } from "@/lib/db";
-import { cn } from "@/lib/utils";
+import { cn, imagePrefix } from "@/lib/utils";
 import Image from "next/image";
 import { useDragonBalls } from "@/hooks/useDragonBalls";
 
@@ -95,7 +95,7 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
     <div className="bg-sky-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
       <Image
         className=""
-        src="/assets/images/horloge-sanctuaire.png"
+        src={imagePrefix() + "/assets/images/horloge-sanctuaire.png"}
         width={50}
         height={50}
         alt="Horloge du Sanctuaire"
@@ -169,84 +169,84 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
       <div className="grid grid-cols-[repeat(4,50px)] gap-2 place-content-center">
         <Image
           className=""
-          src="/assets/images/chevalier-or_belier.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_belier.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Bélier"
         />
         <Image
           className={cn({ "opacity-50": correctCount < 5 })}
-          src="/assets/images/chevalier-or_taureau.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_taureau.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Taureau"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.1 })}
-          src="/assets/images/chevalier-or_gemeaux.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_gemeaux.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or des Gémeaux"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.2 })}
-          src="/assets/images/chevalier-or_cancer.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_cancer.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Cancer"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.3 })}
-          src="/assets/images/chevalier-or_lion.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_lion.jpg"}
           width={50}
           height={60}
           alt="Chevlier d'or du Lion"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.4 })}
-          src="/assets/images/chevalier-or_vierge.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_vierge.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or de la Vierge"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.5 })}
-          src="/assets/images/chevalier-or_balance.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_balance.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or de la Balance"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.6 })}
-          src="/assets/images/chevalier-or_scorpion.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_scorpion.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Scorpion"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.7 })}
-          src="/assets/images/chevalier-or_sagittaire.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_sagittaire.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Sagittaire"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.8 })}
-          src="/assets/images/chevalier-or_capricorne.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_capricorne.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Capricorne"
         />
         <Image
           className={cn({ "opacity-50": currentScore < 0.9 })}
-          src="/assets/images/chevalier-or_verseau.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_verseau.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Verseau"
         />
         <Image
           className={cn({ "opacity-50": correctCount < totalCount - 5 })}
-          src="/assets/images/chevalier-or_poissons.jpg"
+          src={imagePrefix() + "/assets/images/chevalier-or_poissons.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or des Poissons"
@@ -261,7 +261,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
     <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
       <Image
         className=""
-        src="/assets/images/dragon-ball_radar.png"
+        src={imagePrefix() + "/assets/images/dragon-ball_radar.png"}
         width={50}
         height={50}
         alt="Détecteur de dragon balls"
@@ -275,7 +275,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("1") ? (
           <Image
             className="col-start-2 row-span-2"
-            src="/assets/images/dragon-ball_1-etoile.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_1-etoile.png"}
             width={50}
             height={50}
             alt="Dragon ball à 1 étoile"
@@ -286,7 +286,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("2") ? (
           <Image
             className="row-start-2 row-span-2"
-            src="/assets/images/dragon-ball_2-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_2-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 2 étoiles"
@@ -297,7 +297,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("3") ? (
           <Image
             className="col-start-3 row-start-2 row-span-2"
-            src="/assets/images/dragon-ball_3-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_3-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 3 étoiles"
@@ -308,7 +308,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("4") ? (
           <Image
             className="col-start-2 row-start-3 row-span-2"
-            src="/assets/images/dragon-ball_4-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_4-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 4 étoiles"
@@ -319,7 +319,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("5") ? (
           <Image
             className="col-start-1 row-start-4 row-span-2"
-            src="/assets/images/dragon-ball_5-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_5-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 5 étoiles"
@@ -330,7 +330,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("6") ? (
           <Image
             className="col-start-3 row-start-4 row-span-2"
-            src="/assets/images/dragon-ball_6-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_6-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 6 étoiles"
@@ -341,7 +341,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
         {found.includes("7") ? (
           <Image
             className="col-start-2 row-start-5 row-span-2"
-            src="/assets/images/dragon-ball_7-etoiles.png"
+            src={imagePrefix() + "/assets/images/dragon-ball_7-etoiles.png"}
             width={50}
             height={50}
             alt="Dragon ball à 7 étoiles"

@@ -2,12 +2,13 @@ import { NewGameButton } from "@/components/new-game-button";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
+import { imagePrefix } from "@/lib/utils";
 
 export default function Home() {
   return (
     <div className="flex flex-col items-center mx-auto grow">
       <Image
-        src="/assets/homepage/homepage_illu.png"
+        src={imagePrefix() + "assets/homepage/homepage_illu.png"}
         width={1000}
         height={686}
         alt="Grand Quizz des dessins animés de notre enfance"

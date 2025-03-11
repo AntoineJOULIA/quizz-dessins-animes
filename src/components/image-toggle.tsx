@@ -4,10 +4,8 @@ import { Anime } from "@/types";
 import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
-import { cn } from "@/lib/utils";
+import { cn, imagePrefix } from "@/lib/utils";
 import { Baby, Glasses, GraduationCap } from "lucide-react";
-
-const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
 
 // Replace all characters (except the first one) by '_'
 function toHiddenTitle(title: string) {
@@ -22,7 +20,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
     <div className="grid gap-4 place-items-center">
       <Image
         className="aspect-4/3 object-cover w-full h-[500px]"
-        src={hintType === "easy" ? PREFIX + anime.easyHint : PREFIX + anime.hardHint}
+        src={hintType === "easy" ? imagePrefix() + anime.easyHint : imagePrefix() + anime.hardHint}
         width={800}
         height={600}
         alt="hint image"
