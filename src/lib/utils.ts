@@ -28,6 +28,24 @@ export function checkAnswer(anime: Anime, answer: string) {
   return success;
 }
 
+const ERROR_PRIMARY_MESSAGES = ["Mauvaise réponse", "Non, ce n'est pas ça", "Raté !", "Perdu !", "Faux !", "Et non !"];
+const ERROR_SECONDARY_MESSAGES = [
+  "Pas facile hein ?",
+  "Tu peux mieux faire",
+  "Presque ! (non, en fait je n'en sais rien)",
+  "Dommage !",
+  "Tu y es presque (ou pas ^^)",
+  "Ce n'est pas grave",
+  "T'es sérieux là ?",
+  "LOL",
+];
+export function errorPrimaryMessage() {
+  return ERROR_PRIMARY_MESSAGES[Math.floor(Math.random() * ERROR_PRIMARY_MESSAGES.length)];
+}
+export function errorSecondaryMessage() {
+  return ERROR_SECONDARY_MESSAGES[Math.floor(Math.random() * ERROR_SECONDARY_MESSAGES.length)];
+}
+
 export function videoUrlToEmbed(videoUrl: string) {
   if (videoUrl.includes("youtube")) {
     return youtubeUrlToEmbed(videoUrl);

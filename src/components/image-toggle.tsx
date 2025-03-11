@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { cn } from "@/lib/utils";
+import { Baby, Glasses, GraduationCap } from "lucide-react";
 
 const PREFIX = process.env.NODE_ENV !== "production" ? "/" : "";
 
@@ -20,32 +21,37 @@ export function ImageToggle({ anime }: { anime: Anime }) {
   return (
     <div className="grid gap-4 place-items-center">
       <Image
-        className="aspect-4/3 object-cover w-full h-[600px]"
+        className="aspect-4/3 object-cover w-full h-[500px]"
         src={hintType === "easy" ? PREFIX + anime.easyHint : PREFIX + anime.hardHint}
         width={800}
         height={600}
         alt="hint image"
       />
-      <div className="flex gap-4">
+      <div className="flex gap-4 w-full">
         <Button
-          className={cn("text-xl px-8 py-6", { "border border-gray-200": hintType === "easy" })}
+          className={cn("text-xl px-8 py-6 grow", {
+            "outline-double outline-2 outline-gray-800": hintType === "hard",
+          })}
           size={"lg"}
           variant={"outline"}
           onClick={() => setHintType("hard")}
         >
-          Indice difficile
+          <GraduationCap className="mr-2" />
+          Image difficile
         </Button>
         <Button
-          className={cn("text-xl px-8 py-6", { "border border-gray-200": hintType === "hard" })}
+          className={cn("text-xl px-8 py-6 grow", { "outline-double outline-2 outline-gray-800": hintType === "easy" })}
           size={"lg"}
           variant={"outline"}
           onClick={() => setHintType("easy")}
         >
-          Indice facile
+          <Baby className="mr-2" />
+          Image facile
         </Button>
       </div>
       <div className="flex gap-4 w-full items-center">
-        <Button className="text-xl px-8 py-6" variant={"secondary"} onClick={() => setIsTitleHintDisplayed(true)}>
+        <Button className="text-xl px-8 py-6" variant={"ghost"} onClick={() => setIsTitleHintDisplayed(true)}>
+          <Glasses className="mr-2" />
           Indice titre
         </Button>
         {isTitleHintDisplayed && <p className="text-2xl tracking-[0.2em]">{toHiddenTitle(anime.title)}</p>}

@@ -12,7 +12,7 @@ export function Header() {
           </li>
           <li>
             <Link className="text-3xl p-4" href="/board">
-              Résultats
+              Score
             </Link>
           </li>
         </ul>
