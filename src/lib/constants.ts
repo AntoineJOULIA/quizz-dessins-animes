@@ -1,0 +1,16 @@
+import { House } from "@/hooks/useSanctuary";
+
+export const sanctuaryHousesThresholds: { [Property in House]: number } = {
+  belier: 0,
+  taureau: 2,
+  gemeaux: 0.1,
+  cancer: 0.2,
+  lion: 0.3,
+  vierge: 0.4,
+  balance: 0.5,
+  scorpion: 0.6,
+  sagittaire: 0.7,
+  capricorne: 0.8,
+  verseau: 0.9,
+  poissons: 5,
+};

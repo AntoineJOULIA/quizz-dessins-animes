@@ -5,16 +5,16 @@ import { Anime, Status } from "@/types";
 import { ArrowLeft, CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
-import { getAnimes } from "@/lib/db";
 import { cn, imagePrefix } from "@/lib/utils";
 import Image from "next/image";
 import { useDragonBalls } from "@/hooks/useDragonBalls";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
+import { sanctuaryHousesThresholds } from "@/lib/constants";
 
 export function AnswerBoard({ animes }: { animes: Anime[] }) {
   const [animeStatus] = useAnimeStatus();
-  const totalCount = getAnimes().length;
+  const totalCount = animes.length;
   const router = useRouter();
 
   const { foundDragonBalls } = useDragonBalls();
@@ -182,77 +182,77 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
           alt="Chevalier d'or du Bélier"
         />
         <Image
-          className={cn({ "opacity-50": correctCount < 5 })}
+          className={cn({ "opacity-50": correctCount < sanctuaryHousesThresholds.taureau })}
           src={imagePrefix() + "assets/images/chevalier-or_taureau.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Taureau"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.1 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.gemeaux })}
           src={imagePrefix() + "assets/images/chevalier-or_gemeaux.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or des Gémeaux"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.2 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.cancer })}
           src={imagePrefix() + "assets/images/chevalier-or_cancer.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Cancer"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.3 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.lion })}
           src={imagePrefix() + "assets/images/chevalier-or_lion.jpg"}
           width={50}
           height={60}
           alt="Chevlier d'or du Lion"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.4 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.vierge })}
           src={imagePrefix() + "assets/images/chevalier-or_vierge.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or de la Vierge"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.5 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.balance })}
           src={imagePrefix() + "assets/images/chevalier-or_balance.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or de la Balance"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.6 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.scorpion })}
           src={imagePrefix() + "assets/images/chevalier-or_scorpion.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Scorpion"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.7 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.sagittaire })}
           src={imagePrefix() + "assets/images/chevalier-or_sagittaire.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Sagittaire"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.8 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.capricorne })}
           src={imagePrefix() + "assets/images/chevalier-or_capricorne.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Capricorne"
         />
         <Image
-          className={cn({ "opacity-50": currentScore < 0.9 })}
+          className={cn({ "opacity-50": currentScore < sanctuaryHousesThresholds.verseau })}
           src={imagePrefix() + "assets/images/chevalier-or_verseau.jpg"}
           width={50}
           height={60}
           alt="Chevalier d'or du Verseau"
         />
         <Image
-          className={cn({ "opacity-50": correctCount < totalCount - 5 })}
+          className={cn({ "opacity-50": correctCount < totalCount - sanctuaryHousesThresholds.poissons })}
           src={imagePrefix() + "assets/images/chevalier-or_poissons.jpg"}
           width={50}
           height={60}

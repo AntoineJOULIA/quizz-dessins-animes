@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useAnimeStatus } from "./useAnimeStatus";
 import { getAnimes } from "@/lib/db";
+import { sanctuaryHousesThresholds } from "@/lib/constants";
 
 export type House =
   | "belier"
@@ -24,7 +25,8 @@ export function useSanctuary() {
   const [traversedHouses, setTraversedHouses] = useState<House[] | null>(null);
   const [entersHouse, setEntersHouse] = useState(false);
   const totalCount = getAnimes().length;
-  const correctCount = Object.values(animeStatus).filter((status) => status === "correct").length;
+  // Add 1 to account for the "delay" between read and update of animeStatus
+  const correctCount = 1 + Object.values(animeStatus).filter((status) => status === "correct").length;
   const currentScore = correctCount / totalCount;
 
   useEffect(() => {
@@ -49,77 +51,77 @@ export function useSanctuary() {
   }
 
   function updateSanctuaryHouses() {
-    if (correctCount >= totalCount - 5) {
+    if (correctCount >= totalCount - sanctuaryHousesThresholds.poissons) {
       const hasEntered = enters("poissons");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.9) {
+    if (currentScore >= sanctuaryHousesThresholds.verseau) {
       const hasEntered = enters("verseau");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.8) {
+    if (currentScore >= sanctuaryHousesThresholds.capricorne) {
       const hasEntered = enters("capricorne");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.7) {
+    if (currentScore >= sanctuaryHousesThresholds.sagittaire) {
       const hasEntered = enters("sagittaire");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.6) {
+    if (currentScore >= sanctuaryHousesThresholds.scorpion) {
       const hasEntered = enters("scorpion");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.5) {
+    if (currentScore >= sanctuaryHousesThresholds.balance) {
       const hasEntered = enters("balance");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.4) {
+    if (currentScore >= sanctuaryHousesThresholds.vierge) {
       const hasEntered = enters("vierge");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.3) {
+    if (currentScore >= sanctuaryHousesThresholds.lion) {
       const hasEntered = enters("lion");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.2) {
+    if (currentScore >= sanctuaryHousesThresholds.cancer) {
       const hasEntered = enters("cancer");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (currentScore >= 0.1) {
+    if (currentScore >= sanctuaryHousesThresholds.gemeaux) {
       const hasEntered = enters("gemeaux");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
       return;
     }
-    if (correctCount >= 1) {
+    if (correctCount >= sanctuaryHousesThresholds.taureau) {
       const hasEntered = enters("taureau");
       if (hasEntered) return;
       setEntersHouse(false);

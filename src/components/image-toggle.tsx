@@ -83,11 +83,11 @@ export function ImageToggle({ anime }: { anime: Anime }) {
               {currentHouse && (
                 <>
                   <span className="block">
-                    Tu as atteint la maison {getHouseParticle(currentHouse)} {capitalize(currentHouse)} ! Continue ton
-                    avancée dans le sanctuaire !
+                    Tu as atteint la maison {getHouseParticle(currentHouse)} {capitalize(currentHouse)} !
+                    <span className="block">Continue ton avancée dans le sanctuaire !</span>
                   </span>
                   <Image
-                    className="justify-self-center"
+                    className="justify-self-center mt-8"
                     src={imagePrefix() + `assets/images/chevalier-or_${currentHouse}.jpg`}
                     alt={`Chevalier d'or ${getHouseParticle(currentHouse)} ${currentHouse}`}
                     width={200}
@@ -98,9 +98,9 @@ export function ImageToggle({ anime }: { anime: Anime }) {
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="grid grid-cols-2">
-            <AlertDialogCancel>Retourner au quizz</AlertDialogCancel>
+            <AlertDialogCancel>Revenir au quizz</AlertDialogCancel>
             <AlertDialogAction onClick={() => router.push("/board")}>
-              Aller voir ma progression
+              Voir ma progression
               <ChevronRight className="size-4" />
             </AlertDialogAction>
           </AlertDialogFooter>

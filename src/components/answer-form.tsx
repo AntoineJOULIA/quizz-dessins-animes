@@ -99,7 +99,8 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             <AlertDialogHeader className="justify-self-center">
               <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
               <AlertDialogDescription className="text-center">
-                Tu as trouvé la boule à {hiddenDragonBalls[anime.index]} étoiles !
+                Tu as trouvé la boule à {hiddenDragonBalls[anime.index]} étoile
+                {hiddenDragonBalls[anime.index] === "1" ? "" : "s"} !
                 <Image
                   className="justify-self-center"
                   src={
@@ -115,9 +116,9 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
               </AlertDialogDescription>
             </AlertDialogHeader>
             <AlertDialogFooter className="grid grid-cols-2">
-              <AlertDialogCancel>Retourner au quizz</AlertDialogCancel>
+              <AlertDialogCancel>Revenir au quizz</AlertDialogCancel>
               <AlertDialogAction onClick={() => router.push("/board")}>
-                Aller voir ma collection
+                Voir ma collection
                 <ChevronRight className="size-4" />
               </AlertDialogAction>
             </AlertDialogFooter>
