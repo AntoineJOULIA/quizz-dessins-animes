@@ -288,7 +288,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 1 étoile"
           />
         ) : (
-          <EmptySlot className="col-start-2 row-span-2" />
+          <DragonBallEmptySlot className="col-start-2 row-span-2" />
         )}
         {found.includes("2") ? (
           <Image
@@ -299,7 +299,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 2 étoiles"
           />
         ) : (
-          <EmptySlot className="row-start-2 row-span-2" />
+          <DragonBallEmptySlot className="row-start-2 row-span-2" />
         )}
         {found.includes("3") ? (
           <Image
@@ -310,7 +310,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 3 étoiles"
           />
         ) : (
-          <EmptySlot className="col-start-3 row-start-2 row-span-2" />
+          <DragonBallEmptySlot className="col-start-3 row-start-2 row-span-2" />
         )}
         {found.includes("4") ? (
           <Image
@@ -321,7 +321,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 4 étoiles"
           />
         ) : (
-          <EmptySlot className="col-start-2 row-start-3 row-span-2" />
+          <DragonBallEmptySlot className="col-start-2 row-start-3 row-span-2" />
         )}
         {found.includes("5") ? (
           <Image
@@ -332,7 +332,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 5 étoiles"
           />
         ) : (
-          <EmptySlot className="col-start-1 row-start-4 row-span-2" />
+          <DragonBallEmptySlot className="col-start-1 row-start-4 row-span-2" />
         )}
         {found.includes("6") ? (
           <Image
@@ -343,7 +343,7 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 6 étoiles"
           />
         ) : (
-          <EmptySlot className="col-start-3 row-start-4 row-span-2" />
+          <DragonBallEmptySlot className="col-start-3 row-start-4 row-span-2" />
         )}
         {found.includes("7") ? (
           <Image
@@ -354,14 +354,14 @@ function DragonBallCollection({ found }: { found: string[] }) {
             alt="Dragon ball à 7 étoiles"
           />
         ) : (
-          <EmptySlot className="col-start-2 row-start-5 row-span-2" />
+          <DragonBallEmptySlot className="col-start-2 row-start-5 row-span-2" />
         )}
       </div>
     </div>
   );
 }
 
-function EmptySlot({ className }: { className?: string }) {
+function DragonBallEmptySlot({ className }: { className?: string }) {
   return (
     <div
       className={cn(
