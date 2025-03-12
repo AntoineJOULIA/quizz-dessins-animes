@@ -1,4 +1,4 @@
-[ ] Ajouter un bouton "retour" sur la page "Score
+[x] Ajouter un bouton "retour" sur la page "Score
 [ ] Alert (ou Toast) lorsque le joueur
 	[ ] passe une des 12 maisons
 	[ ] trouve une dragon ball
