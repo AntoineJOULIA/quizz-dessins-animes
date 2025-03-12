@@ -25,6 +25,7 @@ import {
 } from "./ui/alert-dialog";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useSanctuary } from "@/hooks/useSanctuary";
 
 const formSchema = z.object({
   answer: z
@@ -36,9 +37,9 @@ const formSchema = z.object({
 export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [showSanctuaryModal, setShowSanctuaryModal] = useState(false);
   const [showDragonBallModal, setShowDragonBallModal] = useState(false);
   const [animeStatus, updateStatus] = useAnimeStatus();
+  const { updateSanctuaryHouses } = useSanctuary();
   const { updateDragonBallCollection } = useDragonBalls();
   const hiddenDragonBalls = useHiddenDragonBalls();
   const router = useRouter();
@@ -58,10 +59,8 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
 
       updateStatus(anime.id, "correct");
 
-      const correctCount = Object.values(animeStatus).filter((status) => status === "correct").length + 1;
-      if (correctCount === 2) {
-        setShowSanctuaryModal(true);
-      }
+      updateSanctuaryHouses();
+
       updateDragonBallCollection(anime.index);
       if (hiddenDragonBalls[anime.index]) {
         setShowDragonBallModal(true);
@@ -94,30 +93,6 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             ></iframe>
           </div>
         )}
-        <AlertDialog open={showSanctuaryModal} onOpenChange={setShowSanctuaryModal}>
-          <AlertDialogContent className="flex flex-col">
-            <AlertDialogHeader className="justify-self-center">
-              <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
-              <AlertDialogDescription className="text-center">
-                Tu as atteint la maison du Taureau ! Continue ton avancée dans le sanctuaire !
-                <Image
-                  className="justify-self-center"
-                  src={imagePrefix() + `assets/images/chevalier-or_taureau.jpg`}
-                  alt="Radar"
-                  width={200}
-                  height={200}
-                />
-              </AlertDialogDescription>
-            </AlertDialogHeader>
-            <AlertDialogFooter className="grid grid-cols-2">
-              <AlertDialogCancel>Retourner au quizz</AlertDialogCancel>
-              <AlertDialogAction onClick={() => router.push("/board")}>
-                Aller voir ma progression
-                <ChevronRight className="size-4" />
-              </AlertDialogAction>
-            </AlertDialogFooter>
-          </AlertDialogContent>
-        </AlertDialog>
 
         <AlertDialog open={showDragonBallModal} onOpenChange={setShowDragonBallModal}>
           <AlertDialogContent className="flex flex-col">

@@ -1,7 +1,7 @@
 [x] Ajouter un bouton "retour" sur la page "Score
 [ ] Alert (ou Toast) lorsque le joueur
 	[ ] passe une des 12 maisons
-	[ ] trouve une dragon ball
+	[x] trouve une dragon ball
 [ ] Afficher le Grand Pope quand toutes les maisons ont été traversées
 [ ] Lorsque les 7 dragon balls ont été trouvées
 	[ ] Afficher Shenron

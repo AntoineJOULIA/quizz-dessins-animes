@@ -4,11 +4,14 @@ import { useRouter } from "next/navigation";
 import { Button } from "./ui/button";
 import { Tv } from "lucide-react";
 import { getAnimes } from "@/lib/db";
+import { useSanctuary } from "@/hooks/useSanctuary";
 
 export function NewGameButton() {
   const router = useRouter();
+  const { reset } = useSanctuary();
 
   function handleClick() {
+    reset();
     hideDragonBalls();
     window.localStorage.removeItem("quizz-status");
     window.localStorage.removeItem("dragon-balls");

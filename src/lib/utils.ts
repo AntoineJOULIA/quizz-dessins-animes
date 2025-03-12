@@ -20,6 +20,10 @@ function normalize(str: string) {
   return normalized;
 }
 
+export function capitalize(str: string) {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 export function imagePrefix() {
   return process.env.NODE_ENV !== "production" ? "/" : "";
 }

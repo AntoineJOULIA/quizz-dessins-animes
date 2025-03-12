@@ -13,7 +13,7 @@ export function useAnimeStatus() {
 
   function updateStatus(animeId: string, status: Status) {
     const results = { ...animeStatus, [animeId]: status };
-    setAnimeStatus(results);
+    setAnimeStatus(() => results);
     window.localStorage.setItem("quizz-status", JSON.stringify(results));
   }
   return [animeStatus, updateStatus] as const;
