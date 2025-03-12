@@ -7,11 +7,24 @@ import { Button } from "@/components/ui/button";
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Anime } from "@/types";
-import { checkAnswer, errorPrimaryMessage, errorSecondaryMessage, videoUrlToEmbed } from "@/lib/utils";
+import { checkAnswer, errorPrimaryMessage, errorSecondaryMessage, imagePrefix, videoUrlToEmbed } from "@/lib/utils";
 import { useState } from "react";
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
-import { Frown, SearchCheck, Trophy } from "lucide-react";
+import { ChevronRight, Frown, SearchCheck, Trophy } from "lucide-react";
 import { useDragonBalls } from "@/hooks/useDragonBalls";
+import { useHiddenDragonBalls } from "@/hooks/useHiddenDragonBalls";
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+} from "./ui/alert-dialog";
+import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const formSchema = z.object({
   answer: z
@@ -23,8 +36,12 @@ const formSchema = z.object({
 export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [showSanctuaryModal, setShowSanctuaryModal] = useState(false);
+  const [showDragonBallModal, setShowDragonBallModal] = useState(false);
   const [animeStatus, updateStatus] = useAnimeStatus();
   const { updateDragonBallCollection } = useDragonBalls();
+  const hiddenDragonBalls = useHiddenDragonBalls();
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -40,7 +57,15 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       if (animeStatus[anime.id] === "correct") return;
 
       updateStatus(anime.id, "correct");
+
+      const correctCount = Object.values(animeStatus).filter((status) => status === "correct").length + 1;
+      if (correctCount === 2) {
+        setShowSanctuaryModal(true);
+      }
       updateDragonBallCollection(anime.index);
+      if (hiddenDragonBalls[anime.index]) {
+        setShowDragonBallModal(true);
+      }
     } else {
       setIsSuccess(false);
       updateStatus(anime.id, "wrong");
@@ -50,18 +75,6 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   const isFound = animeStatus[anime.id] === "correct" || isSuccess;
 
   if (isFound) {
-    // let newFoundDragonBall = null;
-    // hiddenDragonBalls.values().forEach((ball) => {
-    //   if (!ball[anime.index]) {
-    //     return;
-    //   }
-    //   newFoundDragonBall = ball[anime.index];
-    // });
-    // if (newFoundDragonBall !== null) {
-    //   updateDragonBallCollection(anime.index);
-    // }
-    updateDragonBallCollection("1");
-
     return (
       <div className="flex flex-col gap-12">
         <div className="flex gap-4">
@@ -81,6 +94,60 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             ></iframe>
           </div>
         )}
+        <AlertDialog open={showSanctuaryModal} onOpenChange={setShowSanctuaryModal}>
+          <AlertDialogContent className="flex flex-col">
+            <AlertDialogHeader className="justify-self-center">
+              <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
+              <AlertDialogDescription className="text-center">
+                Tu as atteint la maison du Taureau ! Continue ton avancée dans le sanctuaire !
+                <Image
+                  className="justify-self-center"
+                  src={imagePrefix() + `assets/images/chevalier-or_taureau.jpg`}
+                  alt="Radar"
+                  width={200}
+                  height={200}
+                />
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter className="grid grid-cols-2">
+              <AlertDialogCancel>Retourner au quizz</AlertDialogCancel>
+              <AlertDialogAction onClick={() => router.push("/board")}>
+                Aller voir ma progression
+                <ChevronRight className="size-4" />
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
+
+        <AlertDialog open={showDragonBallModal} onOpenChange={setShowDragonBallModal}>
+          <AlertDialogContent className="flex flex-col">
+            <AlertDialogHeader className="justify-self-center">
+              <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
+              <AlertDialogDescription className="text-center">
+                Tu as trouvé la boule à {hiddenDragonBalls[anime.index]} étoiles !
+                <Image
+                  className="justify-self-center"
+                  src={
+                    imagePrefix() +
+                    `assets/images/dragon-ball_${hiddenDragonBalls[anime.index]}-etoile${
+                      hiddenDragonBalls[anime.index] === "1" ? "" : "s"
+                    }.png`
+                  }
+                  alt="Radar"
+                  width={200}
+                  height={200}
+                />
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter className="grid grid-cols-2">
+              <AlertDialogCancel>Retourner au quizz</AlertDialogCancel>
+              <AlertDialogAction onClick={() => router.push("/board")}>
+                Aller voir ma collection
+                <ChevronRight className="size-4" />
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     );
   }
