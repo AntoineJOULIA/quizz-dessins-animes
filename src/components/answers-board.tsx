@@ -2,29 +2,36 @@
 
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Anime, Status } from "@/types";
-import { CircleX, Minus, Trophy } from "lucide-react";
+import { ArrowLeft, CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { getAnimes } from "@/lib/db";
 import { cn, imagePrefix } from "@/lib/utils";
 import Image from "next/image";
 import { useDragonBalls } from "@/hooks/useDragonBalls";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
 
 export function AnswerBoard({ animes }: { animes: Anime[] }) {
   const [animeStatus] = useAnimeStatus();
   const totalCount = getAnimes().length;
+  const router = useRouter();
 
   const { foundDragonBalls } = useDragonBalls();
 
   return (
-    <div className="container space-y-8 mx-auto relative">
+    <main className="container mx-auto relative">
+      <Button className="absolute top-0 left-0" variant={"link"} onClick={() => router.back()}>
+        <ArrowLeft className="size-4 mr-2" />
+        Retour
+      </Button>
       <Achievements statusList={animeStatus} totalCount={totalCount} foundDragonBalls={foundDragonBalls} />
-      <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4">
+      <div className="grid grid-cols-[repeat(auto-fill,minmax(100px,1fr))] gap-4 mt-8">
         {animes.map((anime) => (
           <BoardItem key={anime.id} anime={anime} status={animeStatus[anime.id]} />
         ))}
       </div>
-    </div>
+    </main>
   );
 }
 
@@ -41,7 +48,7 @@ function Achievements({
 }) {
   const correctCount = Object.values(statusList).filter((status) => status === "correct").length;
   return (
-    <div className="grid grid-cols-2 gap-x-8 gap-y-2">
+    <div className="grid grid-cols-2 gap-8">
       <Score correctCount={correctCount} totalCount={totalCount} />
       <Sanctuary correctCount={correctCount} totalCount={totalCount} />
       <DragonBallCollection found={foundDragonBalls} />
@@ -79,7 +86,7 @@ function BoardItem({ anime, status }: { anime: Anime; status: Status }) {
 
 function Score({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
   return (
-    <div className="flex flex-col items-center p-4 col-span-2">
+    <div className="flex flex-col items-center col-span-2">
       <p className="text-xl">Dessins animés trouvés</p>
       <p className="text-xl">
         {" "}
