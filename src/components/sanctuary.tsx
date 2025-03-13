@@ -91,12 +91,18 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
       </div>
       {correctCount === totalCount ? (
         <div className="">
-          <Image className="" src={imagePrefix() + "assets/images/athena.png"} width={200} height={200} alt="Athéna" />
+          <Image
+            className="place-self-center"
+            src={imagePrefix() + "assets/images/athena.png"}
+            width={200}
+            height={200}
+            alt="Athéna"
+          />
         </div>
       ) : correctCount === totalCount - 1 ? (
         <div className="">
           <Image
-            className=""
+            className="place-self-center"
             src={imagePrefix() + "assets/images/grand-pope.jpg"}
             width={150}
             height={180}

@@ -139,7 +139,8 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             <AlertDialogHeader className="justify-self-center">
               <AlertDialogTitle className="text-center text-2xl">Félicitations !</AlertDialogTitle>
               <AlertDialogDescription className="text-center">
-                Tu as reconnu tous les dessins animés ! Tu as pu sauvé Athéna et le monde de notre enfance !
+                <span className="block">Tu as reconnu tous les dessins animés !</span>
+                <span className="block">Tu as pu sauver Athéna et le monde de notre enfance !</span>
                 <Image
                   className="justify-self-center"
                   src={imagePrefix() + `assets/images/athena.png`}
