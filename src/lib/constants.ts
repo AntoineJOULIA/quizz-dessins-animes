@@ -13,4 +13,5 @@ export const sanctuaryHousesThresholds: { [Property in House]: number } = {
   capricorne: 0.8,
   verseau: 0.9,
   poissons: 5,
+  pope: 1,
 };

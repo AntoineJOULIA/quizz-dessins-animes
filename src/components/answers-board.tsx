@@ -113,9 +113,14 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
         <p>Chaque bonne réponse te rapproche de ton objectif !</p>
         {correctCount === totalCount ? (
           <div className="">
-            <p className="self-center text-2xl font-bold text-center">Bravo, tu as vaincu</p>
-            <p className="self-center text-2xl font-bold text-center">le Grand Pope !</p>
+            <p className="self-center text-2xl font-bold text-center">Bravo, tu as sauvé</p>
+            <p className="self-center text-2xl font-bold text-center">Athéna !</p>
           </div>
+        ) : correctCount >= totalCount - 1 ? (
+          <>
+            <p className="text-xl self-center mt-6">Tu affrontes</p>
+            <p className="self-center text-2xl font-bold">le Grand Pope !</p>
+          </>
         ) : correctCount >= totalCount - 5 ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison des</p>
@@ -179,6 +184,10 @@ function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCo
         )}
       </div>
       {correctCount === totalCount ? (
+        <div className="">
+          <Image className="" src={imagePrefix() + "assets/images/athena.png"} width={200} height={200} alt="Athéna" />
+        </div>
+      ) : correctCount === totalCount - 1 ? (
         <div className="">
           <Image
             className=""

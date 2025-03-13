@@ -26,6 +26,7 @@ import {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { useSanctuary } from "@/hooks/useSanctuary";
+import { getAnimes } from "@/lib/db";
 
 const formSchema = z.object({
   answer: z
@@ -38,11 +39,14 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   const [isSuccess, setIsSuccess] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [showDragonBallModal, setShowDragonBallModal] = useState(false);
+  const [showVictoryModal, setShowVictoryModal] = useState(false);
   const [animeStatus, updateStatus] = useAnimeStatus();
   const { updateSanctuaryHouses } = useSanctuary();
   const { updateDragonBallCollection } = useDragonBalls();
   const hiddenDragonBalls = useHiddenDragonBalls();
   const router = useRouter();
+  const totalCount = getAnimes().length;
+  const correctCount = Object.values(animeStatus).filter((status) => status === "correct").length;
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -64,6 +68,11 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       updateDragonBallCollection(anime.index);
       if (hiddenDragonBalls[anime.index]) {
         setShowDragonBallModal(true);
+      }
+
+      // The current correct answer must be added to the previous count
+      if (correctCount + 1 === totalCount) {
+        setShowVictoryModal(true);
       }
     } else {
       setIsSuccess(false);
@@ -124,6 +133,30 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
             </AlertDialogFooter>
           </AlertDialogContent>
         </AlertDialog>
+
+        <AlertDialog open={showVictoryModal} onOpenChange={setShowVictoryModal}>
+          <AlertDialogContent className="flex flex-col">
+            <AlertDialogHeader className="justify-self-center">
+              <AlertDialogTitle className="text-center text-2xl">Félicitations !</AlertDialogTitle>
+              <AlertDialogDescription className="text-center">
+                Tu as reconnu tous les dessins animés ! Tu as pu sauvé Athéna et le monde de notre enfance !
+                <Image
+                  className="justify-self-center"
+                  src={imagePrefix() + `assets/images/athena.png`}
+                  alt="Athéna"
+                  width={200}
+                  height={200}
+                />
+              </AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogFooter className="grid grid-cols-1">
+              <AlertDialogAction onClick={() => router.push("/board")}>
+                Bilan
+                <ChevronRight className="size-4" />
+              </AlertDialogAction>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     );
   }
@@ -143,7 +176,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                     className="text-2xl md:text-2xl p-8"
                     placeholder="Ma réponse"
                     type="string"
-                    // autoComplete="off"
+                    autoComplete={process.env.NODE_ENV === "production" ? "off" : "on"}
                     {...field}
                     onChange={(event) => field.onChange(event.target.value)}
                     onFocus={() => setSubmitted(false)}

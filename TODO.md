@@ -2,7 +2,8 @@
 [x] Alert (ou Toast) lorsque le joueur
 	[x] passe une des 12 maisons
 	[x] trouve une dragon ball
-[ ] Afficher le Grand Pope quand toutes les maisons ont été traversées
+[x] Afficher le Grand Pope quand il ne reste qu'une réponse à trouver
+[x] Afficher Athéna quand toutes les réponses ont été trouvées
 [ ] Lorsque les 7 dragon balls ont été trouvées
 	[ ] Afficher Shenron
 	[ ] Si on clique dessus, une boîte de dialogue permettant de choisir l'index pour lequel on veut la réponse

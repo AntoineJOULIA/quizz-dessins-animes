@@ -80,21 +80,35 @@ export function ImageToggle({ anime }: { anime: Anime }) {
           <AlertDialogHeader className="justify-self-center">
             <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
             <AlertDialogDescription className="text-center">
-              {currentHouse && (
-                <>
-                  <span className="block">
-                    Tu as atteint la maison {getHouseParticle(currentHouse)} {capitalize(currentHouse)} !
-                    <span className="block">Continue ton avancée dans le sanctuaire !</span>
-                  </span>
-                  <Image
-                    className="justify-self-center mt-8"
-                    src={imagePrefix() + `assets/images/chevalier-or_${currentHouse}.jpg`}
-                    alt={`Chevalier d'or ${getHouseParticle(currentHouse)} ${currentHouse}`}
-                    width={200}
-                    height={200}
-                  />
-                </>
-              )}
+              {currentHouse &&
+                (currentHouse === "pope" ? (
+                  <>
+                    <span className="block">Tu as vaincu tous les chevaliers d&apos;or.</span>
+                    <span className="block">Tu es maintenant face au Grand Pope !</span>
+                    <span className="block mt-4">Sauve Athéna !</span>
+                    <Image
+                      className="justify-self-center mt-8"
+                      src={imagePrefix() + `assets/images/grand-pope.jpg`}
+                      alt="Grand Pope"
+                      width={200}
+                      height={200}
+                    />
+                  </>
+                ) : (
+                  <>
+                    <span className="block">
+                      Tu as atteint la maison {getHouseParticle(currentHouse)} {capitalize(currentHouse)} !
+                      <span className="block">Continue ton avancée dans le sanctuaire !</span>
+                    </span>
+                    <Image
+                      className="justify-self-center mt-8"
+                      src={imagePrefix() + `assets/images/chevalier-or_${currentHouse}.jpg`}
+                      alt={`Chevalier d'or ${getHouseParticle(currentHouse)} ${currentHouse}`}
+                      width={200}
+                      height={200}
+                    />
+                  </>
+                ))}
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter className="grid grid-cols-2">

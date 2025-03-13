@@ -17,7 +17,8 @@ export type House =
   | "sagittaire"
   | "capricorne"
   | "verseau"
-  | "poissons";
+  | "poissons"
+  | "pope";
 
 export function useSanctuary() {
   const [currentHouse, setCurrentHouse] = useState<House | null>(null);
@@ -51,6 +52,13 @@ export function useSanctuary() {
   }
 
   function updateSanctuaryHouses() {
+    if (correctCount >= totalCount - sanctuaryHousesThresholds.pope) {
+      const hasEntered = enters("pope");
+      if (hasEntered) return;
+      setEntersHouse(false);
+      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      return;
+    }
     if (correctCount >= totalCount - sanctuaryHousesThresholds.poissons) {
       const hasEntered = enters("poissons");
       if (hasEntered) return;
