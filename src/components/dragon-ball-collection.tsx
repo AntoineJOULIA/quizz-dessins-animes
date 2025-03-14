@@ -27,7 +27,7 @@ export function DragonBallCollection() {
     <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
         className=""
-        src={imagePrefix() + "assets/images/dragon-ball_radar.png"}
+        src={imagePrefix("") + "assets/images/dragon-ball_radar.png"}
         width={50}
         height={50}
         alt="Détecteur de dragon balls"
@@ -54,7 +54,7 @@ export function DragonBallCollection() {
             {found.includes("1") ? (
               <Image
                 className="col-start-2 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_1-etoile.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_1-etoile.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 1 étoile"
@@ -65,7 +65,7 @@ export function DragonBallCollection() {
             {found.includes("2") ? (
               <Image
                 className="row-start-2 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_2-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_2-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 2 étoiles"
@@ -76,7 +76,7 @@ export function DragonBallCollection() {
             {found.includes("3") ? (
               <Image
                 className="col-start-3 row-start-2 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_3-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_3-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 3 étoiles"
@@ -87,7 +87,7 @@ export function DragonBallCollection() {
             {found.includes("4") ? (
               <Image
                 className="col-start-2 row-start-3 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_4-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_4-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 4 étoiles"
@@ -98,7 +98,7 @@ export function DragonBallCollection() {
             {found.includes("5") ? (
               <Image
                 className="col-start-1 row-start-4 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_5-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_5-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 5 étoiles"
@@ -109,7 +109,7 @@ export function DragonBallCollection() {
             {found.includes("6") ? (
               <Image
                 className="col-start-3 row-start-4 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_6-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_6-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 6 étoiles"
@@ -120,7 +120,7 @@ export function DragonBallCollection() {
             {found.includes("7") ? (
               <Image
                 className="col-start-2 row-start-5 row-span-2"
-                src={imagePrefix() + "assets/images/dragon-ball_7-etoiles.png"}
+                src={imagePrefix("") + "assets/images/dragon-ball_7-etoiles.png"}
                 width={50}
                 height={50}
                 alt="Dragon ball à 7 étoiles"
@@ -186,7 +186,7 @@ function Shenron() {
         <div className="row-span-2 place-content-center">
           <Image
             className="place-self-center cursor-pointer transition hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,0,1.0)]"
-            src={imagePrefix() + "assets/images/dragon-ball_shenron.png"}
+            src={imagePrefix("") + "assets/images/dragon-ball_shenron.png"}
             width={150}
             height={200}
             alt="Shenron, le Dragon Sacré"

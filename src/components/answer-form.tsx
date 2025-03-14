@@ -113,7 +113,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 <Image
                   className="justify-self-center"
                   src={
-                    imagePrefix() +
+                    imagePrefix("quizz/") +
                     `assets/images/dragon-ball_${hiddenDragonBalls[anime.index]}-etoile${
                       hiddenDragonBalls[anime.index] === "1" ? "" : "s"
                     }.png`
@@ -143,7 +143,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 <span className="block">Tu as pu sauver Athéna et le monde de notre enfance !</span>
                 <Image
                   className="justify-self-center"
-                  src={imagePrefix() + `assets/images/athena.png`}
+                  src={imagePrefix("quizz/") + `assets/images/athena.png`}
                   alt="Athéna"
                   width={200}
                   height={200}

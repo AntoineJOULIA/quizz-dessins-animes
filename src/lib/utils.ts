@@ -24,8 +24,8 @@ export function capitalize(str: string) {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-export function imagePrefix() {
-  return process.env.NODE_ENV !== "production" ? "/" : "";
+export function imagePrefix(currentSubUrl: string) {
+  return process.env.NODE_ENV !== "production" ? "/" : currentSubUrl;
 }
 
 export function checkAnswer(anime: Anime, answer: string) {

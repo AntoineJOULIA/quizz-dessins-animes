@@ -7,7 +7,7 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center mx-auto grow">
       <Image
-        src={imagePrefix() + "assets/homepage/homepage_illu.png"}
+        src={imagePrefix("") + "assets/homepage/homepage_illu.png"}
         width={1000}
         height={686}
         alt="Grand Quizz des dessins animés de notre enfance"

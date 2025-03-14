@@ -8,7 +8,7 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
     <div className="bg-sky-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
         className=""
-        src={imagePrefix() + "assets/images/horloge-sanctuaire.png"}
+        src={imagePrefix("") + "assets/images/horloge-sanctuaire.png"}
         width={50}
         height={50}
         alt="Horloge du Sanctuaire"
@@ -98,7 +98,7 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
         <div className="">
           <Image
             className="place-self-center"
-            src={imagePrefix() + "assets/images/athena.png"}
+            src={imagePrefix("") + "assets/images/athena.png"}
             width={200}
             height={200}
             alt="Athéna"
@@ -108,7 +108,7 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
         <div className="">
           <Image
             className="place-self-center"
-            src={imagePrefix() + "assets/images/grand-pope.jpg"}
+            src={imagePrefix("") + "assets/images/grand-pope.jpg"}
             width={150}
             height={180}
             alt="Grand Pope"
@@ -118,84 +118,84 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
         <div className="grid grid-cols-[repeat(4,50px)] gap-2 place-content-center">
           <Image
             className={cn({ "opacity-50": correctCount < SANCTUARY_HOUSES_THRESHOLDS.belier })}
-            src={imagePrefix() + "assets/images/chevalier-or_belier.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_belier.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Bélier"
           />
           <Image
             className={cn({ "opacity-50": correctCount < SANCTUARY_HOUSES_THRESHOLDS.taureau })}
-            src={imagePrefix() + "assets/images/chevalier-or_taureau.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_taureau.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Taureau"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.gemeaux })}
-            src={imagePrefix() + "assets/images/chevalier-or_gemeaux.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_gemeaux.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or des Gémeaux"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.cancer })}
-            src={imagePrefix() + "assets/images/chevalier-or_cancer.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_cancer.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Cancer"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.lion })}
-            src={imagePrefix() + "assets/images/chevalier-or_lion.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_lion.jpg"}
             width={50}
             height={60}
             alt="Chevlier d'or du Lion"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.vierge })}
-            src={imagePrefix() + "assets/images/chevalier-or_vierge.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_vierge.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or de la Vierge"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.balance })}
-            src={imagePrefix() + "assets/images/chevalier-or_balance.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_balance.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or de la Balance"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.scorpion })}
-            src={imagePrefix() + "assets/images/chevalier-or_scorpion.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_scorpion.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Scorpion"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.sagittaire })}
-            src={imagePrefix() + "assets/images/chevalier-or_sagittaire.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_sagittaire.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Sagittaire"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.capricorne })}
-            src={imagePrefix() + "assets/images/chevalier-or_capricorne.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_capricorne.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Capricorne"
           />
           <Image
             className={cn({ "opacity-50": currentScore < SANCTUARY_HOUSES_THRESHOLDS.verseau })}
-            src={imagePrefix() + "assets/images/chevalier-or_verseau.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_verseau.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or du Verseau"
           />
           <Image
             className={cn({ "opacity-50": correctCount < totalCount - SANCTUARY_HOUSES_THRESHOLDS.poissons })}
-            src={imagePrefix() + "assets/images/chevalier-or_poissons.jpg"}
+            src={imagePrefix("") + "assets/images/chevalier-or_poissons.jpg"}
             width={50}
             height={60}
             alt="Chevalier d'or des Poissons"
