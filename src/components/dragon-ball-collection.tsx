@@ -24,7 +24,7 @@ export function DragonBallCollection() {
   const { foundDragonBalls: found } = useDragonBalls();
 
   return (
-    <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
+    <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
         className=""
         src={imagePrefix() + "assets/images/dragon-ball_radar.png"}

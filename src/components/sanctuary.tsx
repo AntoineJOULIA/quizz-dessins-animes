@@ -5,7 +5,7 @@ import Image from "next/image";
 export function Sanctuary({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
   const currentScore = correctCount / totalCount;
   return (
-    <div className="bg-sky-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2">
+    <div className="bg-sky-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
         className=""
         src={imagePrefix() + "assets/images/horloge-sanctuaire.png"}
