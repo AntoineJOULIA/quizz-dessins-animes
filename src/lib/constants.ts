@@ -1,6 +1,6 @@
 import { House } from "@/hooks/useSanctuary";
 
-export const sanctuaryHousesThresholds: { [Property in House]: number } = {
+export const SANCTUARY_HOUSES_THRESHOLDS: { [Property in House]: number } = {
   belier: 0,
   taureau: 2,
   gemeaux: 0.1,
@@ -15,3 +15,5 @@ export const sanctuaryHousesThresholds: { [Property in House]: number } = {
   poissons: 5,
   pope: 1,
 };
+
+export const COLORS: string[] = ["zinc", "red", "rose", "orange", "green", "blue", "yellow", "violet"] as const;

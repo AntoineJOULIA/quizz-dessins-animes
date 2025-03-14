@@ -1,5 +1,16 @@
+/* Trick to make dynamic tailwind classes work */
+// text-zinc-500
+// text-red-500
+// text-rose-500
+// text-orange-500
+// text-green-500
+// text-blue-500
+// text-yellow-500
+// text-violet-500
+
 import AnswerForm from "@/components/answer-form";
 import { ImageToggle } from "@/components/image-toggle";
+import { COLORS } from "@/lib/constants";
 import { getAnime, getAnimes } from "@/lib/db";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
@@ -12,6 +23,12 @@ export async function generateStaticParams() {
   return animes.map((anime) => ({
     index: anime.index,
   }));
+}
+
+function randomTextColor() {
+  const randomIndex = Math.floor(Math.random() * COLORS.length);
+  const randomColor = COLORS[randomIndex];
+  return `text-${randomColor}-500`;
 }
 
 export default async function QuizzPage({ params }: { params: Promise<{ index: string }> }) {
@@ -27,7 +44,9 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
 
   return (
     <div className="container mx-auto grid grid-cols-[90px_3fr_2fr_90px] gap-x-20 gap-y-4">
-      <p className="col-start-2 col-span-3 text-6xl font-black">{anime.index.toString().padStart(3, "0")}</p>
+      <p className={`col-start-2 col-span-3 text-6xl font-black ${randomTextColor()}`}>
+        {anime.index.toString().padStart(3, "0")}
+      </p>
       {prevId > 0 ? (
         <Link
           href={`/${prevId}`}
