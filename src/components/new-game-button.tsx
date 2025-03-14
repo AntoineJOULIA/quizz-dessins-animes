@@ -16,7 +16,7 @@ export function NewGameButton() {
     window.localStorage.removeItem("quizz-status");
     window.localStorage.removeItem("dragon-balls");
     window.localStorage.removeItem("granted-shenron-wish");
-    router.push("/1");
+    router.push("/quizz/1");
   }
 
   return (

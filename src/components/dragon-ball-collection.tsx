@@ -210,7 +210,7 @@ function Shenron() {
             </div>
             <AlertDialogFooter className="grid grid-cols-2">
               <AlertDialogCancel>Je reste ici</AlertDialogCancel>
-              <AlertDialogAction onClick={() => router.push(`/${animeIndex}`)}>
+              <AlertDialogAction onClick={() => router.push(`/quizz/${animeIndex}`)}>
                 Merci, j&apos;y vais !
                 <ArrowRight className="size-4" />
               </AlertDialogAction>
