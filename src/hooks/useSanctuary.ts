@@ -47,10 +47,6 @@ export function useSanctuary() {
     );
   }
 
-  function updateCurrentHouse(house: House) {
-    setCurrentHouse(house);
-  }
-
   function updateSanctuaryHouses() {
     if (correctCount >= totalCount - SANCTUARY_HOUSES_THRESHOLDS.pope) {
       const hasEntered = enters("pope");
@@ -154,6 +150,11 @@ export function useSanctuary() {
     return false;
   }
 
+  function hasEntered() {
+    setEntersHouse(false);
+    window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+  }
+
   function getHouseParticle(house: House) {
     switch (house) {
       case "belier":
@@ -183,5 +184,5 @@ export function useSanctuary() {
     }
   }
 
-  return { reset, entersHouse, currentHouse, getHouseParticle, updateCurrentHouse, updateSanctuaryHouses };
+  return { reset, entersHouse, hasEntered, currentHouse, getHouseParticle, updateSanctuaryHouses };
 }

@@ -30,11 +30,12 @@ export function ImageToggle({ anime }: { anime: Anime }) {
   const [showSanctuaryModal, setShowSanctuaryModal] = useState(false);
   const [hasSanctuaryModalBeenShown, setHasSanctuaryModalBeenShown] = useState(false);
   const router = useRouter();
-  const { entersHouse, currentHouse, getHouseParticle } = useSanctuary();
+  const { entersHouse, hasEntered, currentHouse, getHouseParticle } = useSanctuary();
 
   if (currentHouse && entersHouse && !showSanctuaryModal && !hasSanctuaryModalBeenShown) {
     setShowSanctuaryModal(true);
     setHasSanctuaryModalBeenShown(true);
+    hasEntered();
   }
 
   return (
