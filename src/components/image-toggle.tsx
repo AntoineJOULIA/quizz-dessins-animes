@@ -42,7 +42,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
     <div className="grid gap-4 place-items-center">
       <Image
         className="aspect-4/3 object-cover w-full h-[500px] rounded-[35px]"
-        src={hintType === "easy" ? imagePrefix("quizz/") + anime.easyHint : imagePrefix("quizz/") + anime.hardHint}
+        src={hintType === "easy" ? imagePrefix() + anime.easyHint : imagePrefix() + anime.hardHint}
         width={800}
         height={600}
         alt="hint image"
@@ -91,7 +91,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
                     <span className="block mt-4">Sauve Athéna !</span>
                     <Image
                       className="justify-self-center mt-8"
-                      src={imagePrefix("quizz/") + `assets/images/grand-pope.jpg`}
+                      src={imagePrefix() + `assets/images/grand-pope.jpg`}
                       alt="Grand Pope"
                       width={200}
                       height={200}
@@ -105,7 +105,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
                     </span>
                     <Image
                       className="justify-self-center mt-8"
-                      src={imagePrefix("quizz/") + `assets/images/chevalier-or_${currentHouse}.jpg`}
+                      src={imagePrefix() + `assets/images/chevalier-or_${currentHouse}.jpg`}
                       alt={`Chevalier d'or ${getHouseParticle(currentHouse)} ${currentHouse}`}
                       width={200}
                       height={200}
