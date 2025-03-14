@@ -31,7 +31,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
       {prevId > 0 ? (
         <Link
           href={`/${prevId}`}
-          className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
+          className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
         >
           <ChevronLeft className="h-4 w-4 mr-2" />
           {prevId.toString().padStart(3, "0")}
@@ -45,7 +45,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
       {nextId <= getAnimes().length ? (
         <Link
           href={`/${nextId}`}
-          className="self-stretch flex justify-center items-center hover:bg-zinc-100 rounded-lg p-4"
+          className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
         >
           {nextId.toString().padStart(3, "0")}
           <ChevronRight className="h-4 w-4 ml-2" />
