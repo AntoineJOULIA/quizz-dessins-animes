@@ -49,7 +49,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
       <div className="flex gap-4 w-full">
         <Button
           className={cn("text-xl px-8 py-6 grow", {
-            "outline-double outline-2 outline-gray-800": hintType === "hard",
+            "text-blue-800 hover:text-blue-800 outline-double outline-2 outline-blue-500": hintType === "hard",
           })}
           size={"lg"}
           variant={"outline"}
@@ -59,7 +59,9 @@ export function ImageToggle({ anime }: { anime: Anime }) {
           Image difficile
         </Button>
         <Button
-          className={cn("text-xl px-8 py-6 grow", { "outline-double outline-2 outline-gray-800": hintType === "easy" })}
+          className={cn("text-xl px-8 py-6 grow", {
+            "text-blue-800 outline-double outline-2 outline-blue-500 hover:text-blue-800": hintType === "easy",
+          })}
           size={"lg"}
           variant={"outline"}
           onClick={() => setHintType("easy")}
