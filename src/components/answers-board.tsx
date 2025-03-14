@@ -69,7 +69,7 @@ function BoardItem({ anime, status }: { anime: Anime; status: Status }) {
       <Tooltip>
         <TooltipTrigger>
           <Link
-            href={`/quizz/${anime.index}`}
+            href={`/${anime.index}`}
             className={cn("flex items-center justify-between p-4 rounded-lg border border-gray-200 hover:bg-gray-100", {
               "bg-yellow-50 border-yellow-500 hover:bg-yellow-100": status === "correct",
               "bg-red-50 border-red-500 hover:bg-red-100": status === "wrong",

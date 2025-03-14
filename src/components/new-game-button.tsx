@@ -16,7 +16,7 @@ export function NewGameButton() {
     window.localStorage.removeItem("anime-quizz.status");
     window.localStorage.removeItem("anime-quizz.dragon-balls");
     window.localStorage.removeItem("anime-quizz.granted-shenron-wish");
-    router.push("/quizz/1");
+    router.push("/1");
   }
 
   return (

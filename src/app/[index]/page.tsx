@@ -49,7 +49,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
       </p>
       {prevId > 0 ? (
         <Link
-          href={`/quizz/${prevId}`}
+          href={`/${prevId}`}
           className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
         >
           <ChevronLeft className="h-4 w-4 mr-2" />
@@ -63,7 +63,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
 
       {nextId <= getAnimes().length ? (
         <Link
-          href={`/quizz/${nextId}`}
+          href={`/${nextId}`}
           className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
         >
           {nextId.toString().padStart(3, "0")}

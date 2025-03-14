@@ -21,14 +21,14 @@ export function ResumeGameButton() {
   function getFirstUnresolvedIndex() {
     const firstUnresolvedAnime = allAnimes.find((anime) => animeStatus[anime.id] !== "correct");
     const firstUnresolvedIndex = firstUnresolvedAnime?.index ?? 1;
-    return firstUnresolvedIndex;
+    return firstUnresolvedIndex.toString();
   }
 
   return (
     <Button
       variant={"outline"}
       size={"lg"}
-      onClick={() => router.push(`/quizz/${getFirstUnresolvedIndex()}`)}
+      onClick={() => router.push(getFirstUnresolvedIndex())}
       disabled={!alreadyStarted}
     >
       <svg className="size-8" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 22 11">
