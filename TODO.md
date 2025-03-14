@@ -11,4 +11,6 @@
 		[x] Repropose si on fait "annuler" ou "choisir plus tard"
 [x]	Ajouter un favicon approprié
 [x] Arrondir les angles des images
-[ ] Modifier la couleur du thème
+[X] Modifier la couleur du thème
+[x] Bouton "Continuer" disabled si aucune partie en cours
+[ ] Corriger l'affichage systématique du pop-up sanctuaire tant que l'on n'a pas répondu juste à une nouvelle question
