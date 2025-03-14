@@ -13,9 +13,9 @@ export function NewGameButton() {
   function handleClick() {
     reset();
     hideDragonBalls();
-    window.localStorage.removeItem("quizz-status");
-    window.localStorage.removeItem("dragon-balls");
-    window.localStorage.removeItem("granted-shenron-wish");
+    window.localStorage.removeItem("anime-quizz.status");
+    window.localStorage.removeItem("anime-quizz.dragon-balls");
+    window.localStorage.removeItem("anime-quizz.granted-shenron-wish");
     router.push("/quizz/1");
   }
 
@@ -44,5 +44,5 @@ function hideDragonBalls() {
   for (let i = 0; i < hidingAnimeIndexes.length; i++) {
     hiddenBalls = { ...hiddenBalls, [hidingAnimeIndexes[i]]: (i + 1).toString() };
   }
-  window.localStorage.setItem("hidden-dragon-balls", JSON.stringify(hiddenBalls));
+  window.localStorage.setItem("anime-quizz.hidden-dragon-balls", JSON.stringify(hiddenBalls));
 }

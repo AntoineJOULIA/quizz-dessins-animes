@@ -31,7 +31,7 @@ export function useSanctuary() {
   const currentScore = correctCount / totalCount;
 
   useEffect(() => {
-    const storedSanctuaryData = window.localStorage.getItem("sanctuary");
+    const storedSanctuaryData = window.localStorage.getItem("anime-quizz.sanctuary");
     if (storedSanctuaryData) {
       const sanctuaryData = JSON.parse(storedSanctuaryData);
       setCurrentHouse(sanctuaryData.currentHouse);
@@ -42,7 +42,7 @@ export function useSanctuary() {
 
   function reset() {
     window.localStorage.setItem(
-      "sanctuary",
+      "anime-quizz.sanctuary",
       JSON.stringify({ currentHouse: "belier", traversedHouses: ["belier"], entersHouse: false })
     );
   }
@@ -52,84 +52,120 @@ export function useSanctuary() {
       const hasEntered = enters("pope");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (correctCount >= totalCount - SANCTUARY_HOUSES_THRESHOLDS.poissons) {
       const hasEntered = enters("poissons");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.verseau) {
       const hasEntered = enters("verseau");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.capricorne) {
       const hasEntered = enters("capricorne");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.sagittaire) {
       const hasEntered = enters("sagittaire");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.scorpion) {
       const hasEntered = enters("scorpion");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.balance) {
       const hasEntered = enters("balance");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.vierge) {
       const hasEntered = enters("vierge");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.lion) {
       const hasEntered = enters("lion");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.cancer) {
       const hasEntered = enters("cancer");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (currentScore >= SANCTUARY_HOUSES_THRESHOLDS.gemeaux) {
       const hasEntered = enters("gemeaux");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
     if (correctCount >= SANCTUARY_HOUSES_THRESHOLDS.taureau) {
       const hasEntered = enters("taureau");
       if (hasEntered) return;
       setEntersHouse(false);
-      window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
       return;
     }
   }
@@ -142,7 +178,7 @@ export function useSanctuary() {
       const traversed = [...traversedHouses, house];
       setTraversedHouses(traversed);
       window.localStorage.setItem(
-        "sanctuary",
+        "anime-quizz.sanctuary",
         JSON.stringify({ currentHouse: house, traversedHouses: traversed, entersHouse: true })
       );
       return true;
@@ -152,7 +188,10 @@ export function useSanctuary() {
 
   function hasEntered() {
     setEntersHouse(false);
-    window.localStorage.setItem("sanctuary", JSON.stringify({ currentHouse, traversedHouses, entersHouse: false }));
+    window.localStorage.setItem(
+      "anime-quizz.sanctuary",
+      JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+    );
   }
 
   function getHouseParticle(house: House) {

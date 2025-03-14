@@ -6,7 +6,7 @@ export function useDragonBalls() {
   const hiddenDragonBalls = useHiddenDragonBalls();
 
   useEffect(() => {
-    const storedFoundBalls = window.localStorage.getItem("dragon-balls");
+    const storedFoundBalls = window.localStorage.getItem("anime-quizz.dragon-balls");
     if (storedFoundBalls) {
       setFoundDragonBalls(JSON.parse(storedFoundBalls));
     }
@@ -24,7 +24,7 @@ export function useDragonBalls() {
 
     const results = [...foundDragonBalls, foundDragonBall];
     setFoundDragonBalls(results);
-    window.localStorage.setItem("dragon-balls", JSON.stringify(results));
+    window.localStorage.setItem("anime-quizz.dragon-balls", JSON.stringify(results));
   }
 
   return { foundDragonBalls, updateDragonBallCollection };

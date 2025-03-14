@@ -7,7 +7,7 @@ import { getAnimes } from "@/lib/db";
 
 export function ResumeGameButton() {
   const router = useRouter();
-  const alreadyStarted = window.localStorage.getItem("quizz-status") !== null;
+  const alreadyStarted = window.localStorage.getItem("anime-quizz.status") !== null;
   const [animeStatus] = useAnimeStatus();
   const allAnimes = getAnimes();
 

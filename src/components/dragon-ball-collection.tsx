@@ -153,7 +153,7 @@ function Shenron() {
   const router = useRouter();
 
   useEffect(() => {
-    const wishAlreadyGranted = window.localStorage.getItem("granted-shenron-wish");
+    const wishAlreadyGranted = window.localStorage.getItem("anime-quizz.granted-shenron-wish");
     if (wishAlreadyGranted) {
       setIsHintDisplayed(true);
       setAnimeIndex(wishAlreadyGranted);
@@ -175,7 +175,7 @@ function Shenron() {
       return;
     }
     setIsHintDisplayed(true);
-    window.localStorage.setItem("granted-shenron-wish", animeIndex.toString());
+    window.localStorage.setItem("anime-quizz.granted-shenron-wish", animeIndex.toString());
   }
 
   return (
