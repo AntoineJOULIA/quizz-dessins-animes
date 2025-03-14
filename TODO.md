@@ -9,4 +9,6 @@
 	[x] Si on clique dessus, une boîte de dialogue permettant de choisir l'index pour lequel on veut la réponse
 		[x] Affiche la réponse, persistant si on reclique sur Shenron
 		[x] Repropose si on fait "annuler" ou "choisir plus tard"
-[ ]	Ajouter un favicon approprié
+[x]	Ajouter un favicon approprié
+[ ] Arrondir les angles des images
+[ ] Modifier la couleur du thème
