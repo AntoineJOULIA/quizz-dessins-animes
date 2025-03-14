@@ -10,5 +10,5 @@
 		[x] Affiche la réponse, persistant si on reclique sur Shenron
 		[x] Repropose si on fait "annuler" ou "choisir plus tard"
 [x]	Ajouter un favicon approprié
-[ ] Arrondir les angles des images
+[x] Arrondir les angles des images
 [ ] Modifier la couleur du thème
