@@ -1,36 +1,31 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a quiz about animes and cartoons of the 80s/90s developed with [Next.js](https://nextjs.org/).
 
-## Getting Started
+## Quizz questions
 
-First, run the development server:
+Each quiz question page displays a "hard hint" picture challenging the user to identify the anime/cartoon. It is possible to toggle an "easy hint" picture.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+A third kind of hint is related to the title of the show, displaying the first letter, the other ones replaced by "\_" characters.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Achievements
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Score
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The overall score of the user is displayed on the `/board` page.
 
-## Learn More
+From this page, the user can directly access any quiz question, clicking on the question number. The status of the various questions is displayed: success / failure / not tried yet.
 
-To learn more about Next.js, take a look at the following resources:
+### Sanctuary
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The progress through the quiz is represented by the journey of the Knights of the Zodiac throughout the sanctuary. According to the number of correct answers, Gold Knights houses are passed.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+A new house is passed according to fixed correct answers thresholds: there is +/- 10% of the total number of shows between two houses. The order of answers does not matter.
 
-## Deploy on Vercel
+When all 12 houses are passed (only 1 show to be discovered), the user faces the Great Pope. At 100% success, Athena is saved and the game is finished.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Progress can be checked on the `/board` page.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Dragon balls
+
+Dragon balls are randomly dispatched throughout the quiz when starting a new game. When the question corresponding to a dragon ball hideout is answered correctly, it is gathered on a panel of the `/board` page.
+
+When all 7 dragon balls are found, Shenron, the Sacred Dragon, appears. By clicking on it on the `/board` page, it can grant a "wish" to the user: the user can choose a question number and Shenron provides him/her with the corresponding answer.
