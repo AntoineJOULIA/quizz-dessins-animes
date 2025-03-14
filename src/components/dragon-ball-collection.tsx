@@ -175,7 +175,9 @@ function Shenron() {
       return;
     }
     setIsHintDisplayed(true);
-    window.localStorage.setItem("anime-quizz.granted-shenron-wish", animeIndex.toString());
+    const strWithoutLeadingZeros = Number(animeIndex).toString();
+    setAnimeIndex(strWithoutLeadingZeros);
+    window.localStorage.setItem("anime-quizz.granted-shenron-wish", strWithoutLeadingZeros);
   }
 
   return (
