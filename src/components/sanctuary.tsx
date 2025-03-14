@@ -22,70 +22,75 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
             <p className="self-center text-2xl font-bold text-center">Bravo, tu as sauvé</p>
             <p className="self-center text-2xl font-bold text-center">Athéna !</p>
           </div>
-        ) : correctCount >= totalCount - 1 ? (
+        ) : correctCount >= totalCount - SANCTUARY_HOUSES_THRESHOLDS.pope ? (
           <>
             <p className="text-xl self-center mt-6">Tu affrontes</p>
             <p className="self-center text-2xl font-bold">le Grand Pope !</p>
           </>
-        ) : correctCount >= totalCount - 5 ? (
+        ) : correctCount >= totalCount - SANCTUARY_HOUSES_THRESHOLDS.poissons ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison des</p>
             <p className="self-center text-2xl font-bold">Poissons</p>
           </>
-        ) : currentScore >= 0.9 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.verseau ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Verseau</p>
           </>
-        ) : currentScore >= 0.8 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.capricorne ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Capricorne</p>
           </>
-        ) : currentScore >= 0.7 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.sagittaire ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Sagittaire</p>
           </>
-        ) : currentScore >= 0.6 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.scorpion ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Scorpion</p>
           </>
-        ) : currentScore >= 0.5 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.balance ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison de la</p>
             <p className="self-center text-2xl font-bold">Balance</p>
           </>
-        ) : currentScore >= 0.4 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.vierge ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison de la</p>
             <p className="self-center text-2xl font-bold">Vierge</p>
           </>
-        ) : currentScore >= 0.3 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.lion ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Lion</p>
           </>
-        ) : currentScore >= 0.2 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.cancer ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Cancer</p>
           </>
-        ) : currentScore >= 0.1 ? (
+        ) : currentScore >= SANCTUARY_HOUSES_THRESHOLDS.gemeaux ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison des</p>
             <p className="self-center text-2xl font-bold">Gémeaux</p>
           </>
-        ) : correctCount >= 5 ? (
+        ) : correctCount >= SANCTUARY_HOUSES_THRESHOLDS.taureau ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Taureau</p>
           </>
-        ) : (
+        ) : correctCount >= SANCTUARY_HOUSES_THRESHOLDS.belier ? (
           <>
             <p className="text-xl self-center mt-6">Tu es actuellement dans la maison du</p>
             <p className="self-center text-2xl font-bold">Bélier</p>
+          </>
+        ) : (
+          <>
+            <p className="text-xl self-center mt-6">Tu es actuellement à</p>
+            <p className="self-center text-2xl font-bold">l&apos;entrée du sanctuaire</p>
           </>
         )}
       </div>
@@ -112,7 +117,7 @@ export function Sanctuary({ correctCount, totalCount }: { correctCount: number; 
       ) : (
         <div className="grid grid-cols-[repeat(4,50px)] gap-2 place-content-center">
           <Image
-            className=""
+            className={cn({ "opacity-50": correctCount < SANCTUARY_HOUSES_THRESHOLDS.belier })}
             src={imagePrefix() + "assets/images/chevalier-or_belier.jpg"}
             width={50}
             height={60}

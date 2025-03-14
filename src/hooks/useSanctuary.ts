@@ -43,7 +43,7 @@ export function useSanctuary() {
   function reset() {
     window.localStorage.setItem(
       "anime-quizz.sanctuary",
-      JSON.stringify({ currentHouse: "belier", traversedHouses: ["belier"], entersHouse: false })
+      JSON.stringify({ currentHouse: "", traversedHouses: [""], entersHouse: false })
     );
   }
 
@@ -160,6 +160,16 @@ export function useSanctuary() {
     }
     if (correctCount >= SANCTUARY_HOUSES_THRESHOLDS.taureau) {
       const hasEntered = enters("taureau");
+      if (hasEntered) return;
+      setEntersHouse(false);
+      window.localStorage.setItem(
+        "anime-quizz.sanctuary",
+        JSON.stringify({ currentHouse, traversedHouses, entersHouse: false })
+      );
+      return;
+    }
+    if (correctCount >= SANCTUARY_HOUSES_THRESHOLDS.belier) {
+      const hasEntered = enters("belier");
       if (hasEntered) return;
       setEntersHouse(false);
       window.localStorage.setItem(

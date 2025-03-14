@@ -1,7 +1,7 @@
 import { House } from "@/hooks/useSanctuary";
 
 export const SANCTUARY_HOUSES_THRESHOLDS: { [Property in House]: number } = {
-  belier: 0,
+  belier: 1,
   taureau: process.env.NODE_ENV === "production" ? 5 : 2,
   gemeaux: 0.1,
   cancer: 0.2,
