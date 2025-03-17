@@ -89,7 +89,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
           <Trophy className="size-8 md:size-12 text-yellow-500" />
           <p className="text-3xl md:text-5xl font-bold">Bravo !</p>
         </div>
-        <p className="text-4xl md:text-7xl font-black">{anime.title}</p>
+        <p className="text-4xl xl:text-7xl font-black">{anime.title}</p>
         {anime.videoUrl && (
           // https://www.w3schools.com/howto/howto_css_responsive_iframes.asp
           <div className="relative w-full pt-[56.25%]">
@@ -174,7 +174,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 <FormLabel className="text-2xl font-bold">Quel est ce dessin animé ?</FormLabel>
                 <FormControl>
                   <Input
-                    className="md:text-2xl p-6 md:p-8"
+                    className="md:text-xl xl:text-2xl p-6 xl:p-8"
                     placeholder="Ma réponse"
                     type="string"
                     autoComplete={process.env.NODE_ENV === "production" ? "off" : "on"}
@@ -188,7 +188,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
               </FormItem>
             )}
           />
-          <Button className="text-xl md:text-2xl font-bold py-6 md:py-8" type="submit">
+          <Button className="text-xl xl:text-2xl font-bold py-6 xl:py-8" type="submit">
             Vérifier
             <SearchCheck className="size-8 mr-2" />
           </Button>

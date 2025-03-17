@@ -24,7 +24,7 @@ export function DragonBallCollection() {
   const { foundDragonBalls: found } = useDragonBalls();
 
   return (
-    <div className="bg-green-100 rounded-lg md:grid md:grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
+    <div className="bg-green-100 rounded-lg xl:grid xl:grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
         className="mx-auto"
         src={imagePrefix() + "assets/images/dragon-ball_radar.png"}
@@ -33,8 +33,8 @@ export function DragonBallCollection() {
         alt="Détecteur de dragon balls"
       />
       <p
-        className={cn("text-2xl font-bold text-center md:text-left md:col-span-2", {
-          "md:col-span-1": found.length === 7,
+        className={cn("text-2xl font-bold text-center xl:text-left xl:col-span-2", {
+          "xl:col-span-1": found.length === 7,
         })}
       >
         Boules de cristal
@@ -42,23 +42,23 @@ export function DragonBallCollection() {
       {found.length === 7 ? (
         <>
           <Shenron />
-          <div className="md:col-start-2 flex flex-col gap-2">
-            <p className="text-balance text-center md:text-left">Tu as trouvé les 7 boules de cristal !</p>
-            <p className="text-balance text-center md:text-left">Tu peux maintenant faire appel au Dragon Sacré.</p>
-            <p className="text-balance text-center md:text-left">Clique sur celui-ci et il exaucera ton voeu !</p>
+          <div className="xl:col-start-2 flex flex-col gap-2">
+            <p className="text-balance text-center xl:text-left">Tu as trouvé les 7 boules de cristal !</p>
+            <p className="text-balance text-center xl:text-left">Tu peux maintenant faire appel au Dragon Sacré.</p>
+            <p className="text-balance text-center xl:text-left">Clique sur celui-ci et il exaucera ton voeu !</p>
           </div>
         </>
       ) : (
         <>
-          <div className="mt-8 md:mt-0 md:col-start-2 flex flex-col gap-2">
-            <p className="text-balance text-center md:text-left">
+          <div className="mt-8 xl:mt-0 xl:col-start-2 flex flex-col gap-2">
+            <p className="text-balance text-center xl:text-left">
               Pars à la recherche des boules de cristal disséminées dans le jeu.
             </p>
-            <p className="text-balance text-center md:text-left">
+            <p className="text-balance text-center xl:text-left">
               Trouve les 7 boules et le Dragon Sacré exaucera un voeu !
             </p>
           </div>
-          <div className="mt-8 md:mt-0 grid grid-cols-[repeat(3,50px)] gap-2 place-items-center place-content-center">
+          <div className="mt-8 xl:mt-0 grid grid-cols-[repeat(3,50px)] gap-2 place-items-center place-content-center">
             {found.includes("1") ? (
               <Image
                 className="col-start-2 row-span-2"
@@ -191,7 +191,7 @@ function Shenron() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <div className="md:row-span-2 place-content-center">
+        <div className="xl:row-span-2 place-content-center">
           <Image
             className="place-self-center cursor-pointer transition hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,0,1.0)]"
             src={imagePrefix() + "assets/images/dragon-ball_shenron.png"}

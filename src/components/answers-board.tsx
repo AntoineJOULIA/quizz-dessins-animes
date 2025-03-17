@@ -19,7 +19,7 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
   return (
     <main className="relative p-3">
       <Button className="absolute top-0 left-0" variant={"link"} onClick={() => router.back()}>
-        <ArrowLeft className="size-4 md:mr-2" />
+        <ArrowLeft className="size-4 xl:mr-2" />
         Retour
       </Button>
       <Achievements statusList={animeStatus} totalCount={totalCount} />

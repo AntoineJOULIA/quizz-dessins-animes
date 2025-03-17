@@ -43,7 +43,7 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
   const nextId = parseInt(index) + 1;
 
   return (
-    <div className="p-2 grid grid-cols-2 md:grid-cols-[90px_3fr_2fr_90px] gap-4 md:gap-x-20 md:gap-y-4">
+    <div className="p-2 grid grid-cols-2 md:grid-cols-[90px_3fr_2fr_90px] gap-4 md:gap-x-10 xl:gap-x-20 md:gap-y-4">
       <p className={`md:col-start-2 md:col-span-3 text-4xl md:text-6xl font-black ${randomTextColor()}`}>
         {anime.index.toString().padStart(3, "0")}
       </p>
