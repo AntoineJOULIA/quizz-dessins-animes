@@ -34,7 +34,7 @@ export function DragonBallCollection() {
       />
       <p
         className={cn("text-2xl font-bold text-center md:text-left md:col-span-2", {
-          "col-span-1": found.length === 7,
+          "md:col-span-1": found.length === 7,
         })}
       >
         Boules de cristal
@@ -43,9 +43,9 @@ export function DragonBallCollection() {
         <>
           <Shenron />
           <div className="md:col-start-2 flex flex-col gap-2">
-            <p>Tu as trouvé les 7 boules de cristal !</p>
-            <p>Tu peux maintenant faire appel au Dragon Sacré.</p>
-            <p>Clique sur celui-ci et il exaucera ton voeu !</p>
+            <p className="text-balance text-center md:text-left">Tu as trouvé les 7 boules de cristal !</p>
+            <p className="text-balance text-center md:text-left">Tu peux maintenant faire appel au Dragon Sacré.</p>
+            <p className="text-balance text-center md:text-left">Clique sur celui-ci et il exaucera ton voeu !</p>
           </div>
         </>
       ) : (
@@ -191,7 +191,7 @@ function Shenron() {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <div className="row-span-2 place-content-center">
+        <div className="md:row-span-2 place-content-center">
           <Image
             className="place-self-center cursor-pointer transition hover:scale-110 hover:drop-shadow-[0_0_15px_rgba(255,255,0,1.0)]"
             src={imagePrefix() + "assets/images/dragon-ball_shenron.png"}
@@ -205,8 +205,8 @@ function Shenron() {
         <AlertDialogHeader>
           <AlertDialogTitle>Dragon sacré</AlertDialogTitle>
           <AlertDialogDescription>
-            <span className="block">Je peux exaucer un voeu :</span>
-            <span className="block">
+            <span className="block text-balance">Je peux exaucer un voeu :</span>
+            <span className="block text-balance">
               indique-moi le numéro d&apos;un dessin animé que tu n&apos;as pas encore trouvé, et je te donnerai son
               titre.
             </span>
@@ -218,7 +218,7 @@ function Shenron() {
               <p>Le titre du dessin animé n°{animeIndex} est</p>
               <p className="font-bold text-2xl">{getAnime(animeIndex)?.title}</p>
             </div>
-            <AlertDialogFooter className="grid grid-cols-2">
+            <AlertDialogFooter className="grid grid-cols-2 gap-4 items-baseline">
               <AlertDialogCancel>Je reste ici</AlertDialogCancel>
               <AlertDialogAction onClick={() => router.push(animeIndex)}>
                 Merci, j&apos;y vais !
@@ -233,7 +233,7 @@ function Shenron() {
               <Input id="index" value={animeIndex} onChange={handleChange} />
             </div>
             {errorMsg.length > 0 && <p className="text-destructive text-sm">{errorMsg}</p>}
-            <AlertDialogFooter className="grid grid-cols-2 gap-4">
+            <AlertDialogFooter className="grid grid-cols-2 gap-4 items-baseline">
               <AlertDialogCancel>Laisse-moi réfléchir</AlertDialogCancel>
               <Button onClick={submit}>Exauce mon voeu !</Button>
             </AlertDialogFooter>
