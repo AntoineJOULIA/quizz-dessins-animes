@@ -12,7 +12,7 @@ export default function Home() {
         height={686}
         alt="Grand Quizz des dessins animés de notre enfance"
       />
-      <div className="flex gap-4">
+      <div className="flex flex-col md:flex-row gap-4">
         <NewGameButton />
         <ResumeGameButton />
       </div>

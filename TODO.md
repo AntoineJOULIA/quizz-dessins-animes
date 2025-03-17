@@ -14,4 +14,6 @@
 [X] Modifier la couleur du thème
 [x] Bouton "Continuer" disabled si aucune partie en cours
 [x] Corriger l'affichage systématique du pop-up sanctuaire tant que l'on n'a pas répondu juste à une nouvelle question
-[ ] Mettre en choérence les noms pour le localStorage
+[x] Mettre en choérence les noms pour le localStorage
+
+[ ] Responsive design
