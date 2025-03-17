@@ -124,7 +124,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 />
               </AlertDialogDescription>
             </AlertDialogHeader>
-            <AlertDialogFooter className="grid grid-cols-2">
+            <AlertDialogFooter className="grid grid-cols-2 items-baseline gap-2">
               <AlertDialogCancel>Revenir au quizz</AlertDialogCancel>
               <AlertDialogAction onClick={() => router.push("/board")}>
                 Voir ma collection
