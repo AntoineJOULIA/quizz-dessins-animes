@@ -8,7 +8,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className="min-h-screen flex flex-col container mx-auto">
+      <body className="min-h-screen flex flex-col container mx-auto pb-8">
         <Header />
         {children}
       </body>
