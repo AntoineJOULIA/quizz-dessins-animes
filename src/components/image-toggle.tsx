@@ -81,7 +81,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
       <AlertDialog open={showSanctuaryModal} onOpenChange={setShowSanctuaryModal}>
         <AlertDialogContent className="flex flex-col">
           <AlertDialogHeader className="justify-self-center">
-            <AlertDialogTitle className="text-center text-2xl">Bravo !</AlertDialogTitle>
+            <AlertDialogTitle className="text-center md:text-2xl">Bravo !</AlertDialogTitle>
             <AlertDialogDescription className="text-center">
               {currentHouse &&
                 (currentHouse === "pope" ? (
@@ -114,7 +114,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
                 ))}
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter className="grid grid-cols-2">
+          <AlertDialogFooter className="grid grid-cols-2 gap-2 items-baseline">
             <AlertDialogCancel>Revenir au quizz</AlertDialogCancel>
             <AlertDialogAction onClick={() => router.push("/board")}>
               Voir ma progression

@@ -84,7 +84,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
 
   if (isFound) {
     return (
-      <div className="col-span-2 md:col-span-1 md:col-start-3 flex flex-col gap-6 md:gap-12">
+      <div className="col-span-2 md:col-span-1 flex flex-col gap-6 md:gap-12">
         <div className="flex gap-4">
           <Trophy className="size-8 md:size-12 text-yellow-500" />
           <p className="text-3xl md:text-5xl font-bold">Bravo !</p>
