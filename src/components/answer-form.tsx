@@ -84,7 +84,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
 
   if (isFound) {
     return (
-      <div className="flex flex-col gap-12">
+      <div className="col-span-2 md:col-span-1 md:col-start-3 flex flex-col gap-12">
         <div className="flex gap-4">
           <Trophy className="size-12 text-yellow-500" />
           <p className="text-5xl font-bold">Bravo !</p>
@@ -163,9 +163,9 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
   }
 
   return (
-    <div className="flex flex-col gap-24">
+    <div className="col-span-2 md:col-span-1 flex flex-col gap-8 md:gap-24">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-8">
+        <form onSubmit={form.handleSubmit(onSubmit)} className="flex flex-col gap-4 md:gap-8">
           <FormField
             control={form.control}
             name="answer"
@@ -174,7 +174,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 <FormLabel className="text-2xl font-bold">Quel est ce dessin animé ?</FormLabel>
                 <FormControl>
                   <Input
-                    className="text-2xl md:text-2xl p-8"
+                    className="md:text-2xl p-6 md:p-8"
                     placeholder="Ma réponse"
                     type="string"
                     autoComplete={process.env.NODE_ENV === "production" ? "off" : "on"}
@@ -188,7 +188,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
               </FormItem>
             )}
           />
-          <Button className="text-2xl font-bold px-12 py-8" type="submit">
+          <Button className="text-xl md:text-2xl font-bold py-6 md:py-8" type="submit">
             Vérifier
             <SearchCheck className="size-8 mr-2" />
           </Button>
@@ -196,11 +196,11 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
       </Form>
 
       {submitted && (
-        <div className="grid grid-cols-[min-content_1fr] gap-4 content-start">
+        <div className="grid grid-cols-[min-content_1fr] gap-x-4 gap-y-2 md:gap-4 content-start">
           <Frown className="size-10 text-red-500" />
-          <p className="text-4xl font-bold">{errorPrimaryMessage()}</p>
-          <p className="text-2xl col-start-2">{errorSecondaryMessage()}</p>
-          <p className="text-2xl col-start-2 font-bold">Essaye encore !</p>
+          <p className="text-2xl md:text-4xl font-bold">{errorPrimaryMessage()}</p>
+          <p className="md:text-2xl col-start-2">{errorSecondaryMessage()}</p>
+          <p className="text-xl md:text-2xl col-start-2 font-bold">Essaye encore !</p>
         </div>
       )}
     </div>

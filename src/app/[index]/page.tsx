@@ -43,14 +43,17 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
   const nextId = parseInt(index) + 1;
 
   return (
-    <div className="container mx-auto grid grid-cols-[90px_3fr_2fr_90px] gap-x-20 gap-y-4">
-      <p className={`col-start-2 col-span-3 text-6xl font-black ${randomTextColor()}`}>
+    <div className="p-2 grid grid-cols-2 md:grid-cols-[90px_3fr_2fr_90px] gap-4 md:gap-x-20 md:gap-y-4">
+      <p className={`md:col-start-2 md:col-span-3 text-4xl md:text-6xl font-black ${randomTextColor()}`}>
         {anime.index.toString().padStart(3, "0")}
       </p>
+      <ImageToggle anime={anime} />
+      <AnswerForm anime={anime} />
+
       {prevId > 0 ? (
         <Link
           href={`/${prevId}`}
-          className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
+          className="md:col-start-1 md:row-start-2 self-stretch flex justify-center items-center border border-accent md:border-none hover:bg-accent rounded-lg p-4"
         >
           <ChevronLeft className="h-4 w-4 mr-2" />
           {prevId.toString().padStart(3, "0")}
@@ -58,13 +61,10 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
       ) : (
         <div></div>
       )}
-      <ImageToggle anime={anime} />
-      <AnswerForm anime={anime} />
-
       {nextId <= getAnimes().length ? (
         <Link
           href={`/${nextId}`}
-          className="self-stretch flex justify-center items-center hover:bg-accent rounded-lg p-4"
+          className="self-stretch flex justify-center items-center border border-accent md:border-none hover:bg-accent rounded-lg p-4"
         >
           {nextId.toString().padStart(3, "0")}
           <ChevronRight className="h-4 w-4 ml-2" />
