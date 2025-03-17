@@ -16,4 +16,4 @@
 [x] Corriger l'affichage systématique du pop-up sanctuaire tant que l'on n'a pas répondu juste à une nouvelle question
 [x] Mettre en choérence les noms pour le localStorage
 
-[ ] Responsive design
+[x] Responsive design
