@@ -24,21 +24,25 @@ export function DragonBallCollection() {
   const { foundDragonBalls: found } = useDragonBalls();
 
   return (
-    <div className="bg-green-100 rounded-lg grid grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
+    <div className="bg-green-100 rounded-lg md:grid md:grid-cols-[auto,minmax(auto,40ch),1fr] p-8 gap-x-6 gap-y-2 shadow-md">
       <Image
-        className=""
+        className="mx-auto"
         src={imagePrefix() + "assets/images/dragon-ball_radar.png"}
         width={50}
         height={50}
         alt="Détecteur de dragon balls"
       />
-      <p className={cn("text-2xl font-bold col-span-2 gap-4", { "col-span-1": found.length === 7 })}>
+      <p
+        className={cn("text-2xl font-bold text-center md:text-left md:col-span-2", {
+          "col-span-1": found.length === 7,
+        })}
+      >
         Boules de cristal
       </p>
       {found.length === 7 ? (
         <>
           <Shenron />
-          <div className="col-start-2 flex flex-col gap-2">
+          <div className="md:col-start-2 flex flex-col gap-2">
             <p>Tu as trouvé les 7 boules de cristal !</p>
             <p>Tu peux maintenant faire appel au Dragon Sacré.</p>
             <p>Clique sur celui-ci et il exaucera ton voeu !</p>
@@ -46,11 +50,15 @@ export function DragonBallCollection() {
         </>
       ) : (
         <>
-          <div className="col-start-2 flex flex-col gap-2">
-            <p>Pars à la recherche des boules de cristal disséminées dans le jeu.</p>
-            <p>Trouve les 7 boules et le Dragon Sacré exaucera un voeu !</p>
+          <div className="mt-8 md:mt-0 md:col-start-2 flex flex-col gap-2">
+            <p className="text-balance text-center md:text-left">
+              Pars à la recherche des boules de cristal disséminées dans le jeu.
+            </p>
+            <p className="text-balance text-center md:text-left">
+              Trouve les 7 boules et le Dragon Sacré exaucera un voeu !
+            </p>
           </div>
-          <div className="grid grid-cols-[repeat(3,50px)] gap-2 place-items-center place-content-center">
+          <div className="mt-8 md:mt-0 grid grid-cols-[repeat(3,50px)] gap-2 place-items-center place-content-center">
             {found.includes("1") ? (
               <Image
                 className="col-start-2 row-span-2"
