@@ -59,12 +59,12 @@ export default async function QuizzPage({ params }: { params: Promise<{ index: s
           {prevId.toString().padStart(3, "0")}
         </Link>
       ) : (
-        <div></div>
+        <div className="md:col-start-1 md:row-start-2"></div>
       )}
       {nextId <= getAnimes().length ? (
         <Link
           href={`/${nextId}`}
-          className="self-stretch flex justify-center items-center border border-accent md:border-none hover:bg-accent rounded-lg p-4"
+          className="start-4 self-stretch flex justify-center items-center border border-accent md:border-none hover:bg-accent rounded-lg p-4"
         >
           {nextId.toString().padStart(3, "0")}
           <ChevronRight className="h-4 w-4 ml-2" />
