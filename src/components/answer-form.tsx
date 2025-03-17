@@ -84,19 +84,19 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
 
   if (isFound) {
     return (
-      <div className="col-span-2 md:col-span-1 md:col-start-3 flex flex-col gap-12">
+      <div className="col-span-2 md:col-span-1 md:col-start-3 flex flex-col gap-6 md:gap-12">
         <div className="flex gap-4">
-          <Trophy className="size-12 text-yellow-500" />
-          <p className="text-5xl font-bold">Bravo !</p>
+          <Trophy className="size-8 md:size-12 text-yellow-500" />
+          <p className="text-3xl md:text-5xl font-bold">Bravo !</p>
         </div>
-        <p className="text-7xl font-black">{anime.title}</p>
+        <p className="text-4xl md:text-7xl font-black">{anime.title}</p>
         {anime.videoUrl && (
-          <div className="">
+          // https://www.w3schools.com/howto/howto_css_responsive_iframes.asp
+          <div className="relative w-full pt-[56.25%]">
             <iframe
               src={videoUrlToEmbed(anime.videoUrl)}
-              width="560"
-              height="315"
-              title="YouTube video player"
+              className="absolute inset-0 w-full h-full"
+              title="Video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
