@@ -17,9 +17,9 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
   const router = useRouter();
 
   return (
-    <main className="container mx-auto relative">
+    <main className="relative p-3">
       <Button className="absolute top-0 left-0" variant={"link"} onClick={() => router.back()}>
-        <ArrowLeft className="size-4 mr-2" />
+        <ArrowLeft className="size-4 md:mr-2" />
         Retour
       </Button>
       <Achievements statusList={animeStatus} totalCount={totalCount} />
@@ -43,7 +43,7 @@ function Achievements({
 }) {
   const correctCount = Object.values(statusList).filter((status) => status === "correct").length;
   return (
-    <div className="grid grid-cols-2 gap-8">
+    <div className="space-y-4 md:grid md:grid-cols-2 md:gap-8">
       <Score correctCount={correctCount} totalCount={totalCount} />
       <Sanctuary correctCount={correctCount} totalCount={totalCount} />
       <DragonBallCollection />
@@ -53,8 +53,9 @@ function Achievements({
 
 function Score({ correctCount, totalCount }: { correctCount: number; totalCount: number }) {
   return (
-    <div className="flex flex-col items-center col-span-2">
-      <p className="text-xl">Dessins animés trouvés</p>
+    <div className="flex flex-col gap-2 items-center md:col-span-2">
+      <p className="text-xl md:hidden">Score</p>
+      <p className="hidden md:block text-xl">Dessins animés trouvés</p>
       <p className="text-xl">
         {" "}
         <span className="text-6xl font-black">{correctCount}</span> / {totalCount}
