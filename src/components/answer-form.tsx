@@ -111,7 +111,7 @@ export default function AnswerForm({ anime }: { anime: Anime }) {
                 Tu as trouvé la boule à {hiddenDragonBalls[anime.index]} étoile
                 {hiddenDragonBalls[anime.index] === "1" ? "" : "s"} !
                 <Image
-                  className="justify-self-center"
+                  className="justify-self-center mx-auto"
                   src={
                     imagePrefix() +
                     `assets/images/dragon-ball_${hiddenDragonBalls[anime.index]}-etoile${

@@ -90,7 +90,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
                     <span className="block">Tu es maintenant face au Grand Pope !</span>
                     <span className="block mt-4">Sauve Athéna !</span>
                     <Image
-                      className="justify-self-center mt-8"
+                      className="justify-self-center mx-auto mt-8"
                       src={imagePrefix() + `assets/images/grand-pope.jpg`}
                       alt="Grand Pope"
                       width={200}
@@ -104,7 +104,7 @@ export function ImageToggle({ anime }: { anime: Anime }) {
                       <span className="block">Continue ton avancée dans le sanctuaire !</span>
                     </span>
                     <Image
-                      className="justify-self-center mt-8"
+                      className="justify-self-center mx-auto mt-8"
                       src={imagePrefix() + `assets/images/chevalier-or_${currentHouse}.jpg`}
                       alt={`Chevalier d'or ${getHouseParticle(currentHouse)} ${currentHouse}`}
                       width={200}
