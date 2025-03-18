@@ -2,6 +2,9 @@ import { NewGameButton } from "@/components/new-game-button";
 import Image from "next/image";
 import { imagePrefix } from "@/lib/utils";
 import { ResumeGameButton } from "@/components/resume-game-button";
+import localFont from "next/font/local";
+
+const happyMemories = localFont({ src: "../../public/assets/font/Happy Memories/Happy Memories.ttf" });
 
 export default function Home() {
   return (
@@ -13,6 +16,10 @@ export default function Home() {
         height={343}
         alt="Grand Quizz des dessins animés de notre enfance"
       />
+      <div className={`${happyMemories.className} text-2xl text-center md:hidden`}>
+        <p className="text-4xl font-bold">Dessins animés</p>
+        <p>de notre enfance</p>
+      </div>
       <Image
         className="hidden md:block"
         src={imagePrefix() + "assets/homepage/homepage_illu.png"}
@@ -20,20 +27,20 @@ export default function Home() {
         height={686}
         alt="Grand Quizz des dessins animés de notre enfance"
       />
-      <div className="flex flex-col md:flex-row gap-4 z-10">
+      <div className="flex flex-col md:flex-row gap-4">
         <NewGameButton />
         <ResumeGameButton />
       </div>
 
       <Image
-        className="absolute bottom-0 left-0 max-w-[50vw] md:hidden"
+        className="absolute bottom-0 left-0 max-w-[50vw] -z-10 md:hidden"
         src={imagePrefix() + "assets/homepage/homepage_illu-mobile-left.png"}
         width={500}
         height={343}
         alt="Goldorak"
       />
       <Image
-        className="absolute bottom-0 right-0 max-w-[40vw] md:hidden"
+        className="absolute bottom-0 right-0 max-w-[40vw] -z-10 md:hidden"
         src={imagePrefix() + "assets/homepage/homepage_illu-mobile-right.png"}
         width={500}
         height={343}
