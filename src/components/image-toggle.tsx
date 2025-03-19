@@ -72,7 +72,11 @@ export function ImageToggle({ anime }: { anime: Anime }) {
         </Button>
       </div>
       <div className="flex flex-col md:flex-row gap-4 w-full items-center">
-        <Button className="text-xl px-8 py-6" variant={"ghost"} onClick={() => setIsTitleHintDisplayed(true)}>
+        <Button
+          className="text-xl px-8 py-6 w-full md:w-auto"
+          variant={"ghost"}
+          onClick={() => setIsTitleHintDisplayed(!isTitleHintDisplayed)}
+        >
           <Glasses className="mr-2" />
           Indice titre
         </Button>
