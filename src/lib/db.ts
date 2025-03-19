@@ -1,6 +1,7 @@
 import { Anime } from "@/types";
 import rawDataFull from "../data/dessins-animes.json";
 import rawDataSample from "../data/dessins-animes_sample.json";
+// import rawDataSample from "../data/dessins-animes.json";
 
 const dataFull = rawDataFull as Anime[];
 const dataSample = rawDataSample as Anime[];

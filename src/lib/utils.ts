@@ -7,14 +7,15 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 /**
- *
+ * See unicode characters at : https://symbl.cc/fr/unicode-table/#combining-diacritical-marks
  * @param str : chaîne de caractères à normaliser, contenant des caractères accentués
  * @returns chaines de caractères normalisée, sans accents, en minuscules et sans espaces inutiles
  */
 function normalize(str: string) {
   const normalized = str
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "")
+    .replace(/[\u0300-\u036f]/g, "") // Special characters, esp. apostrophe, quotes, etc.
+    .replace(/[\u0021-\u002F]/g, "") // Common punctuation, esp. comma
     .toLowerCase()
     .trim();
   return normalized;
@@ -30,6 +31,7 @@ export function imagePrefix() {
 
 export function checkAnswer(anime: Anime, answer: string) {
   const success = anime.acceptedAnswers.some((acceptedAnswer) => {
+    console.log(normalize(acceptedAnswer), "/", normalize(answer));
     return normalize(acceptedAnswer) === normalize(answer);
   });
   return success;
