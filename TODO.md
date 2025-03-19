@@ -17,3 +17,5 @@
 [x] Mettre en choérence les noms pour le localStorage
 
 [x] Responsive design
+[ ] Bouton "retour" sticky dans answer board
+[ ] Corriger la gestion des virgules et apostrophes dans les réponses
