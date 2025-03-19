@@ -2,7 +2,7 @@
 
 import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Anime, Status } from "@/types";
-import { ArrowLeft, CircleX, Minus, Trophy } from "lucide-react";
+import { ChevronLeft, CircleX, Minus, Trophy } from "lucide-react";
 import Link from "next/link";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "./ui/tooltip";
 import { cn } from "@/lib/utils";
@@ -18,8 +18,13 @@ export function AnswerBoard({ animes }: { animes: Anime[] }) {
 
   return (
     <main className="relative p-3">
-      <Button className="absolute top-0 left-0" variant={"link"} onClick={() => router.back()}>
-        <ArrowLeft className="size-4 xl:mr-2" />
+      <Button
+        className="sticky top-4 left-4 rounded-full"
+        size={"sm"}
+        variant={"default"}
+        onClick={() => router.back()}
+      >
+        <ChevronLeft className="size-4" />
         Retour
       </Button>
       <Achievements statusList={animeStatus} totalCount={totalCount} />
