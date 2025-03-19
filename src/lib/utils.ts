@@ -29,9 +29,8 @@ export function imagePrefix() {
 }
 
 export function checkAnswer(anime: Anime, answer: string) {
-  const normalizedAnswer = normalize(answer);
   const success = anime.acceptedAnswers.some((acceptedAnswer) => {
-    return acceptedAnswer.toLowerCase().trim() === normalizedAnswer;
+    return normalize(acceptedAnswer) === normalize(answer);
   });
   return success;
 }
