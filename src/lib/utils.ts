@@ -14,8 +14,9 @@ export function cn(...inputs: ClassValue[]) {
 function normalize(str: string) {
   const normalized = str
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "") // Special characters, esp. apostrophe, quotes, etc.
-    .replace(/[\u0021-\u002F]/g, "") // Common punctuation, esp. comma
+    .replace(/[\u0300-\u036f]/g, "") // Special characters (diacritics)
+    .replace(/[\u0021-\u002F]/g, "") // Base punctuation, esp. comma
+    .replace(/[\u2018-\u201F]/g, "") // General punctuation, esp. apostrophe
     .toLowerCase()
     .trim();
   return normalized;
