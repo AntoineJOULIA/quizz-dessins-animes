@@ -2,6 +2,7 @@ import { Anime } from "@/types";
 import { clsx } from "clsx";
 import type { ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { LOCAL_STORAGE_KEYS } from "./constants";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -80,4 +81,28 @@ export function shuffle<T>(array: T[]) {
     [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
   }
   return shuffled;
+}
+
+export async function saveLocalStorageToFile(filename: string = "quizz-anime.json") {
+  // Récupérer le contenu du localStorage
+  const localStorageData: { [key: string]: unknown } = {};
+  LOCAL_STORAGE_KEYS.forEach((key) => (localStorageData[key] = window.localStorage.getItem(key)));
+
+  // Convertir les données en JSON
+  const jsonData = JSON.stringify(localStorageData, null, 2);
+
+  // Créer un objet Blob avec le contenu JSON
+  const blob = new Blob([jsonData], { type: "application/json" });
+
+  // Créer un lien de téléchargement
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+
+  // Ajouter et cliquer sur le lien pour déclencher le téléchargement
+  document.body.appendChild(a);
+  a.click();
+
+  // Nettoyer le DOM
+  document.body.removeChild(a);
 }
