@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { ImportExportDropdown } from "./import-export-dropdown";
 
 export function Header() {
   return (
@@ -18,7 +17,6 @@ export function Header() {
           </li>
         </ul>
       </nav>
-      <ImportExportDropdown />
     </header>
   );
 }

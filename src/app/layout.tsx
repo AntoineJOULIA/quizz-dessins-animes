@@ -1,5 +1,6 @@
 import { Header } from "@/components/header";
 import "./globals.css";
+import { ImportExportDropdown } from "@/components/import-export-dropdown";
 
 export default function RootLayout({
   children,
@@ -11,6 +12,7 @@ export default function RootLayout({
       <body>
         <div className="min-h-screen flex flex-col container mx-auto pb-8">
           <Header />
+          <ImportExportDropdown />
           {children}
         </div>
       </body>

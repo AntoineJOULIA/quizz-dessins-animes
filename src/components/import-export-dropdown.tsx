@@ -1,9 +1,16 @@
 "use client";
 
-import { Download, Upload } from "lucide-react";
+import { Download, Menu, Upload } from "lucide-react";
 import { saveLocalStorageToFile } from "@/lib/utils";
 import { ChangeEvent } from "react";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "./ui/dropdown-menu";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "./ui/dropdown-menu";
 import { Button } from "./ui/button";
 
 export function ImportExportDropdown() {
@@ -12,8 +19,9 @@ export function ImportExportDropdown() {
   }
 
   function handleImport(event: ChangeEvent<HTMLInputElement>) {
-    console.log("import");
-    const file = event.target.files?.[0];
+    if (!event.target.files || event.target.files.length === 0) return;
+
+    const file = event.target.files[0];
     if (!file) return;
 
     const reader = new FileReader();
@@ -37,23 +45,27 @@ export function ImportExportDropdown() {
   }
 
   return (
-    <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button variant={"outline"}>Sauvegardes</Button>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent>
-        <DropdownMenuItem onClick={handleExport}>
-          <Upload className="size-4 mr-3" />
-          Exporter...
-        </DropdownMenuItem>
-        <DropdownMenuItem asChild>
-          <label htmlFor="import">
-            <input id="import" className="hidden" type="file" accept="application/json" onChange={handleImport} />
-            <Download className="size-4 mr-3" />
+    <div className="fixed top-3 right-3">
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button variant={"outline"} size={"icon"}>
+            <Menu />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent>
+          <DropdownMenuLabel>Sauvegardes</DropdownMenuLabel>
+          <DropdownMenuSeparator />
+          <DropdownMenuItem onClick={handleExport}>
+            <Upload className="size-4 mr-3" />
+            Exporter...
+          </DropdownMenuItem>
+          <DropdownMenuItem onSelect={() => document.getElementById("fileInput")?.click()}>
+            <Download className="mr-2 h-4 w-4" />
             Importer...
-          </label>
-        </DropdownMenuItem>
-      </DropdownMenuContent>
-    </DropdownMenu>
+          </DropdownMenuItem>
+        </DropdownMenuContent>
+        <input id="fileInput" type="file" className="hidden" onChange={handleImport} />
+      </DropdownMenu>
+    </div>
   );
 }
