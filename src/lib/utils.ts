@@ -33,7 +33,6 @@ export function imagePrefix() {
 
 export function checkAnswer(anime: Anime, answer: string) {
   const success = anime.acceptedAnswers.some((acceptedAnswer) => {
-    console.log(normalize(acceptedAnswer), "/", normalize(answer));
     return normalize(acceptedAnswer) === normalize(answer);
   });
   return success;

@@ -162,7 +162,7 @@ function Shenron() {
 
   useEffect(() => {
     const wishAlreadyGranted = window.localStorage.getItem("anime-quizz.granted-shenron-wish");
-    if (wishAlreadyGranted) {
+    if (wishAlreadyGranted && wishAlreadyGranted !== "null") {
       setIsHintDisplayed(true);
       setAnimeIndex(wishAlreadyGranted);
     }
