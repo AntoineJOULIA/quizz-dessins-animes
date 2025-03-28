@@ -6,7 +6,7 @@ import { Tv } from "lucide-react";
 import { getAnimes } from "@/lib/db";
 import { useSanctuary } from "@/hooks/useSanctuary";
 
-export function NewGameButton() {
+export function NewGameButton({ alreadyStarted }: { alreadyStarted: boolean }) {
   const router = useRouter();
   const { reset } = useSanctuary();
 
@@ -20,7 +20,7 @@ export function NewGameButton() {
   }
 
   return (
-    <Button size={"lg"} className="" onClick={handleClick}>
+    <Button variant={alreadyStarted ? "outline" : "default"} size={"lg"} onClick={handleClick}>
       <Tv className="mr-2" />
       Nouvelle partie
     </Button>
@@ -38,9 +38,6 @@ function hideDragonBalls() {
     hidingAnimeIndexes.push(extractedIndex[0].toString());
   }
   let hiddenBalls: { [key: string]: string } = {};
-  // const hiddenBalls = hidingAnimeIndexes.map((animeIndex, idx) => ({
-  //   [animeIndex]: (idx + 1).toString(),
-  // }));
   for (let i = 0; i < hidingAnimeIndexes.length; i++) {
     hiddenBalls = { ...hiddenBalls, [hidingAnimeIndexes[i]]: (i + 1).toString() };
   }

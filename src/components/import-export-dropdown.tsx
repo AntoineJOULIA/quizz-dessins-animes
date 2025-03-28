@@ -56,7 +56,7 @@ export function ImportExportDropdown() {
           <DropdownMenuLabel>Sauvegardes</DropdownMenuLabel>
           <DropdownMenuSeparator />
           <DropdownMenuItem onClick={handleExport}>
-            <Upload className="size-4 mr-3" />
+            <Upload className="size-4 mr-2" />
             Exporter...
           </DropdownMenuItem>
           <DropdownMenuItem onSelect={() => document.getElementById("fileInput")?.click()}>

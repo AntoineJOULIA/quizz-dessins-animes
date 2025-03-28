@@ -4,16 +4,9 @@ import { useAnimeStatus } from "@/hooks/useAnimeStatus";
 import { Button } from "./ui/button";
 import { useRouter } from "next/navigation";
 import { getAnimes } from "@/lib/db";
-import { useEffect, useState } from "react";
 
-export function ResumeGameButton() {
-  const [alreadyStarted, setAlreadyStarted] = useState(false);
+export function ResumeGameButton({ alreadyStarted }: { alreadyStarted: boolean }) {
   const router = useRouter();
-
-  useEffect(() => {
-    const started = window.localStorage.getItem("anime-quizz.status") !== null;
-    setAlreadyStarted(started);
-  }, []);
 
   const [animeStatus] = useAnimeStatus();
   const allAnimes = getAnimes();
@@ -26,7 +19,7 @@ export function ResumeGameButton() {
 
   return (
     <Button
-      variant={"outline"}
+      variant={alreadyStarted ? "default" : "outline"}
       size={"lg"}
       onClick={() => router.push(getFirstUnresolvedIndex())}
       disabled={!alreadyStarted}

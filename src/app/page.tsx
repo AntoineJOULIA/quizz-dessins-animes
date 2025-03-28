@@ -1,8 +1,7 @@
-import { NewGameButton } from "@/components/new-game-button";
 import Image from "next/image";
 import { imagePrefix } from "@/lib/utils";
-import { ResumeGameButton } from "@/components/resume-game-button";
 import localFont from "next/font/local";
+import { HomePageButtonBar } from "@/components/homepage-button-bar";
 
 const happyMemories = localFont({ src: "../../public/assets/font/Happy Memories/Happy Memories.ttf" });
 
@@ -27,11 +26,10 @@ export default function Home() {
         height={686}
         alt="Grand Quizz des dessins animés de notre enfance"
       />
-      <div className="flex flex-col md:flex-row gap-4">
-        <NewGameButton />
-        <ResumeGameButton />
-      </div>
 
+      <HomePageButtonBar />
+
+      {/* Mobile illustrations */}
       <Image
         className="absolute bottom-0 left-0 max-w-[50vw] -z-10 md:hidden"
         src={imagePrefix() + "assets/homepage/homepage_illu-mobile-left.png"}

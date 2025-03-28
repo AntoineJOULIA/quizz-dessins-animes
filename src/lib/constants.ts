@@ -1,7 +1,7 @@
 import { House } from "@/hooks/useSanctuary";
 
 const LOCAL_STORAGE_PREFIX = "anime-quizz";
-const LOCAL_STORAGE_RAW_KEYS = ["status", "sanctuary", "dragon-balls", "hidden-dragon-balls"];
+const LOCAL_STORAGE_RAW_KEYS = ["status", "sanctuary", "dragon-balls", "hidden-dragon-balls", "granted-shenron-wish"];
 export const LOCAL_STORAGE_KEYS = LOCAL_STORAGE_RAW_KEYS.map((key) => `${LOCAL_STORAGE_PREFIX}.${key}`);
 
 export const SANCTUARY_HOUSES_THRESHOLDS: { [Property in House]: number } = {
