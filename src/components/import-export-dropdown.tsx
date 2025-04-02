@@ -45,7 +45,7 @@ export function ImportExportDropdown() {
   }
 
   return (
-    <div className="fixed top-3 right-3 z-50">
+    <div className="fixed top-3 right-3 md:top-5 md:right-5 xl:top-8 xl:right-8 z-50">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button variant={"outline"} size={"icon"}>
